@@ -1,5 +1,9 @@
 # Organismo for Mac
-Organismo framework for Mac be injected into Mac Apps to explore them at runtime.
+Organismo framework for Mac be injected into Mac Apps to explore them at runtime. For a good technical background you could read https://medium.com/p/17ed375f736e
+
+To inject it into a Mac App:
+
+$ DYLD_INSERT_LIBRARIES=/path_to/Organismo-mac.framework/Versions/A/Organismo-mac /Applications/Calculator.app/Contents/MacOS/Calculator
 
 # Organismo for iOS
 Organismo is a framework to bypass all vital systems of iOS Apps in order to retrieve information and simulate any condition in real life, from network conditions to motion and location. It works in conjuction with [Organismo-Desktop](https://github.com/JonGabilondoAngulo/Organismo-Desktop) as a visualizer and generator of virtual scenerarios.
