@@ -1,5 +1,8 @@
-# Organismo-iOS-Driver
-Organismo-iOS-Driver is a framework to bypass all vital systems of Apps in order to retrieve information and simulate any condition in real life, from network conditions to motion and location. It works in conjuction with [Organismo-Desktop](https://github.com/JonGabilondoAngulo/Organismo-Desktop) as a visualizer and generator of virtual scenerarios.
+# Organismo for Mac
+Organismo framework for Mac be injected into Mac Apps to explore them at runtime.
+
+# Organismo for iOS
+Organismo is a framework to bypass all vital systems of iOS Apps in order to retrieve information and simulate any condition in real life, from network conditions to motion and location. It works in conjuction with [Organismo-Desktop](https://github.com/JonGabilondoAngulo/Organismo-Desktop) as a visualizer and generator of virtual scenerarios.
 
 ## Quick Start
 This repository comes with sample Apps for a quick start. Open the Organismo workspace in this repository. Select one of the Sample Apps, change the Team & Certificate and run it on your device. The App will be running with Organismo bypass ready to comunicate with Organismo-Desktop.
