@@ -96,7 +96,7 @@
 		03C2CD121E9396B200508AD9 /* ORGGestureSwipe.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C2CD101E9396B200508AD9 /* ORGGestureSwipe.h */; };
 		03C2CD131E9396B200508AD9 /* ORGGestureSwipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C2CD111E9396B200508AD9 /* ORGGestureSwipe.m */; };
 		03DA668B1CBCEE4700E26CAA /* Organismo.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DA668A1CBCEE4700E26CAA /* Organismo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03DA66921CBCEE4700E26CAA /* Organismo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DA66871CBCEE4700E26CAA /* Organismo.framework */; };
+		03DA66921CBCEE4700E26CAA /* Organismo-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DA66871CBCEE4700E26CAA /* Organismo-iOS.framework */; };
 		03DA66971CBCEE4700E26CAA /* OrganismoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA66961CBCEE4700E26CAA /* OrganismoTests.m */; };
 		03DA66AF1CBD009A00E26CAA /* Web in Resources */ = {isa = PBXBuildFile; fileRef = 03DA66AE1CBD009A00E26CAA /* Web */; };
 		03DA66B61CBD00C300E26CAA /* ORGCoreMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DA66B01CBD00C300E26CAA /* ORGCoreMotion.h */; };
@@ -281,7 +281,7 @@
 		03C2CD0D1E93969800508AD9 /* ORGGestureLongPress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGGestureLongPress.m; sourceTree = "<group>"; };
 		03C2CD101E9396B200508AD9 /* ORGGestureSwipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGGestureSwipe.h; sourceTree = "<group>"; };
 		03C2CD111E9396B200508AD9 /* ORGGestureSwipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGGestureSwipe.m; sourceTree = "<group>"; };
-		03DA66871CBCEE4700E26CAA /* Organismo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Organismo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03DA66871CBCEE4700E26CAA /* Organismo-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Organismo-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DA668A1CBCEE4700E26CAA /* Organismo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Organismo.h; sourceTree = "<group>"; };
 		03DA668C1CBCEE4700E26CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03DA66911CBCEE4700E26CAA /* OrganismoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrganismoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,7 +396,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DA66921CBCEE4700E26CAA /* Organismo.framework in Frameworks */,
+				03DA66921CBCEE4700E26CAA /* Organismo-iOS.framework in Frameworks */,
 				5D5781C9E30947AC7C8B0949 /* libPods-OrganismoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,7 +535,7 @@
 		03DA66881CBCEE4700E26CAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03DA66871CBCEE4700E26CAA /* Organismo.framework */,
+				03DA66871CBCEE4700E26CAA /* Organismo-iOS.framework */,
 				03DA66911CBCEE4700E26CAA /* OrganismoTests.xctest */,
 				039C339422C7D63600E61DA8 /* Organismo-mac.framework */,
 			);
@@ -891,9 +891,9 @@
 			productReference = 039C339422C7D63600E61DA8 /* Organismo-mac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03DA66861CBCEE4700E26CAA /* Organismo */ = {
+		03DA66861CBCEE4700E26CAA /* Organismo-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03DA669B1CBCEE4700E26CAA /* Build configuration list for PBXNativeTarget "Organismo" */;
+			buildConfigurationList = 03DA669B1CBCEE4700E26CAA /* Build configuration list for PBXNativeTarget "Organismo-iOS" */;
 			buildPhases = (
 				EB760E3B14C1F7B6136E4C79 /* [CP] Check Pods Manifest.lock */,
 				03DA66821CBCEE4700E26CAA /* Sources */,
@@ -906,9 +906,9 @@
 			);
 			dependencies = (
 			);
-			name = Organismo;
+			name = "Organismo-iOS";
 			productName = Organismo;
-			productReference = 03DA66871CBCEE4700E26CAA /* Organismo.framework */;
+			productReference = 03DA66871CBCEE4700E26CAA /* Organismo-iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		03DA66901CBCEE4700E26CAA /* OrganismoTests */ = {
@@ -968,7 +968,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03DA66861CBCEE4700E26CAA /* Organismo */,
+				03DA66861CBCEE4700E26CAA /* Organismo-iOS */,
 				03DA66901CBCEE4700E26CAA /* OrganismoTests */,
 				039C32F422C7D63600E61DA8 /* Organismo-mac */,
 			);
@@ -1194,7 +1194,7 @@
 /* Begin PBXTargetDependency section */
 		03DA66941CBCEE4700E26CAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03DA66861CBCEE4700E26CAA /* Organismo */;
+			target = 03DA66861CBCEE4700E26CAA /* Organismo-iOS */;
 			targetProxy = 03DA66931CBCEE4700E26CAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1540,7 +1540,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		03DA669B1CBCEE4700E26CAA /* Build configuration list for PBXNativeTarget "Organismo" */ = {
+		03DA669B1CBCEE4700E26CAA /* Build configuration list for PBXNativeTarget "Organismo-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03DA669C1CBCEE4700E26CAA /* Debug */,
