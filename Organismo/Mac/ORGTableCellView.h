@@ -7,11 +7,14 @@
  */
 
 @import Cocoa;
+@class ORGUITreeNode;
 
 @interface ORGTableCellView : NSTableCellView
 
+@property (weak) ORGUITreeNode *treeNode;
 @property (weak) IBOutlet NSTextField *subTitleTextField;
 @property (weak) IBOutlet NSProgressIndicator *progessIndicator;
+@property (assign) BOOL selected;
 
 - (void)layoutViewsForSmallSize:(BOOL)smallSize animated:(BOOL)animated;
 

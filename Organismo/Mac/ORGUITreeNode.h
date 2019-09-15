@@ -13,13 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ORGUITreeNode : NSObject
 
-@property (nonatomic, weak) NSView *view;
-@property (nonatomic) NSMutableArray<ORGUITreeNode*> *subviews;
+@property (nonatomic, weak) NSObject *uiElement;
+@property (nonatomic) NSMutableArray<ORGUITreeNode*> *children;
 
 - (instancetype)initWithView:(nonnull NSView*)view;
 - (NSString*)title;
 - (NSString*)descriptor;
+- (NSString*)className;
 - (NSImage*)thumbnailImage;
+- (NSRect)rect;
+- (BOOL)isHidden;
 
 @end
 

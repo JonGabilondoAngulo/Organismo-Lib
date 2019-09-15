@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03007BB1232A1C3700DAF421 /* ORGElementPropertiesView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03007BAF232A1C3700DAF421 /* ORGElementPropertiesView.h */; };
+		03007BB2232A1C3700DAF421 /* ORGElementPropertiesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03007BB0232A1C3700DAF421 /* ORGElementPropertiesView.m */; };
 		0300F9D922EECA73007DF323 /* ORGUITreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0300F9D722EECA73007DF323 /* ORGUITreeNode.m */; };
 		0300F9DA22EECA73007DF323 /* ORGUITreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 0300F9D822EECA73007DF323 /* ORGUITreeNode.h */; };
 		031F745F1D4015F400DDC876 /* UITextView+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 031F745D1D4015F400DDC876 /* UITextView+ORG.h */; };
@@ -85,6 +87,8 @@
 		03A06CC92033752D00751692 /* ORGRequestClassHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A06CC72033752D00751692 /* ORGRequestClassHierarchy.h */; };
 		03A06CCA2033752D00751692 /* ORGRequestClassHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A06CC82033752D00751692 /* ORGRequestClassHierarchy.m */; };
 		03A89A6F1D92CCE7000AB035 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033677F31D3E6974009B86A4 /* UIKit.framework */; };
+		03AF319D232ABE2E00437482 /* ORGElementClassView.h in Headers */ = {isa = PBXBuildFile; fileRef = 03AF319B232ABE2E00437482 /* ORGElementClassView.h */; };
+		03AF319E232ABE2E00437482 /* ORGElementClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF319C232ABE2E00437482 /* ORGElementClassView.m */; };
 		03B588B21D04082D0083DF15 /* NSDate+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 03B588B01D04082D0083DF15 /* NSDate+ORG.h */; };
 		03B588B31D04082D0083DF15 /* NSDate+ORG.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B588B11D04082D0083DF15 /* NSDate+ORG.m */; };
 		03C2CD001E9395DB00508AD9 /* ORGRequestLongPress.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C2CCFE1E9395DB00508AD9 /* ORGRequestLongPress.h */; };
@@ -193,6 +197,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03007BAF232A1C3700DAF421 /* ORGElementPropertiesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORGElementPropertiesView.h; path = Organismo/ORGElementPropertiesView.h; sourceTree = "<group>"; };
+		03007BB0232A1C3700DAF421 /* ORGElementPropertiesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ORGElementPropertiesView.m; path = Organismo/ORGElementPropertiesView.m; sourceTree = "<group>"; };
 		0300F9D722EECA73007DF323 /* ORGUITreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGUITreeNode.m; path = Organismo/Mac/ORGUITreeNode.m; sourceTree = "<group>"; };
 		0300F9D822EECA73007DF323 /* ORGUITreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGUITreeNode.h; path = Organismo/Mac/ORGUITreeNode.h; sourceTree = "<group>"; };
 		0300F9DD22EECB56007DF323 /* mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "mac-Info.plist"; path = "Organismo/Mac/mac-Info.plist"; sourceTree = "<group>"; };
@@ -271,6 +277,8 @@
 		039DA6D71D8EBC3000F6937A /* ORGRequestTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGRequestTap.m; sourceTree = "<group>"; };
 		03A06CC72033752D00751692 /* ORGRequestClassHierarchy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORGRequestClassHierarchy.h; sourceTree = "<group>"; };
 		03A06CC82033752D00751692 /* ORGRequestClassHierarchy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORGRequestClassHierarchy.m; sourceTree = "<group>"; };
+		03AF319B232ABE2E00437482 /* ORGElementClassView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORGElementClassView.h; path = Organismo/Mac/ORGElementClassView.h; sourceTree = "<group>"; };
+		03AF319C232ABE2E00437482 /* ORGElementClassView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ORGElementClassView.m; path = Organismo/Mac/ORGElementClassView.m; sourceTree = "<group>"; };
 		03B588B01D04082D0083DF15 /* NSDate+ORG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ORG.h"; sourceTree = "<group>"; };
 		03B588B11D04082D0083DF15 /* NSDate+ORG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ORG.m"; sourceTree = "<group>"; };
 		03C2CCFE1E9395DB00508AD9 /* ORGRequestLongPress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGRequestLongPress.h; sourceTree = "<group>"; };
@@ -450,10 +458,14 @@
 				034B1B6422CFA7F300CFEDD0 /* ORGUITree.m */,
 				0300F9D822EECA73007DF323 /* ORGUITreeNode.h */,
 				0300F9D722EECA73007DF323 /* ORGUITreeNode.m */,
-				0394907722D335BE0029BB9B /* ORGInspectorWindowController.h */,
-				0394907822D335BE0029BB9B /* ORGInspectorWindowController.m */,
 				0394907F22D351790029BB9B /* ORGTableCellView.h */,
 				0394908022D351790029BB9B /* ORGTableCellView.m */,
+				0394907722D335BE0029BB9B /* ORGInspectorWindowController.h */,
+				0394907822D335BE0029BB9B /* ORGInspectorWindowController.m */,
+				03007BAF232A1C3700DAF421 /* ORGElementPropertiesView.h */,
+				03007BB0232A1C3700DAF421 /* ORGElementPropertiesView.m */,
+				03AF319B232ABE2E00437482 /* ORGElementClassView.h */,
+				03AF319C232ABE2E00437482 /* ORGElementClassView.m */,
 				033DCF9C22D4D69A00295555 /* Categories */,
 				034B1B6222CE4FA000CFEDD0 /* Resources */,
 				0300F9DC22EECB40007DF323 /* Supporting Files */,
@@ -783,10 +795,12 @@
 				039C338C22C7D63600E61DA8 /* Organismo.h in Headers */,
 				032C9FE822C8CC2600B2DBEA /* OrganismoPrefixHeader-mac.pch in Headers */,
 				033DCF9F22D4D6C800295555 /* NSWindow+ORG.h in Headers */,
+				03AF319D232ABE2E00437482 /* ORGElementClassView.h in Headers */,
 				0300F9DA22EECA73007DF323 /* ORGUITreeNode.h in Headers */,
 				0394908122D351790029BB9B /* ORGTableCellView.h in Headers */,
 				034B1B6022CE4F9A00CFEDD0 /* ORGNSViewHierarchy.h in Headers */,
 				0394907A22D335BE0029BB9B /* ORGInspectorWindowController.h in Headers */,
+				03007BB1232A1C3700DAF421 /* ORGElementPropertiesView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,6 +957,7 @@
 				TargetAttributes = {
 					039C32F422C7D63600E61DA8 = {
 						DevelopmentTeam = NRRF7234ZC;
+						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 					};
 					03DA66861CBCEE4700E26CAA = {
@@ -1095,9 +1110,11 @@
 				033DCFA422D4D6EA00295555 /* NSControl+ORG.m in Sources */,
 				034B1B6622CFA7F300CFEDD0 /* ORGUITree.m in Sources */,
 				0394907B22D335BE0029BB9B /* ORGInspectorWindowController.m in Sources */,
+				03AF319E232ABE2E00437482 /* ORGElementClassView.m in Sources */,
 				034B1B6122CE4F9A00CFEDD0 /* ORGNSViewHierarchy.m in Sources */,
 				033DCFA822D4D70200295555 /* NSButton+ORG.m in Sources */,
 				032C9FE622C8CA2700B2DBEA /* NSApplication+ORG.m in Sources */,
+				03007BB2232A1C3700DAF421 /* ORGElementPropertiesView.m in Sources */,
 				033DCFA022D4D6C800295555 /* NSWindow+ORG.m in Sources */,
 				0394908222D351790029BB9B /* ORGTableCellView.m in Sources */,
 			);
@@ -1203,6 +1220,7 @@
 		039C339222C7D63600E61DA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -1241,6 +1259,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 0;
 			};
 			name = Debug;
@@ -1248,6 +1268,7 @@
 		039C339322C7D63600E61DA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -1286,6 +1307,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 0;
 			};
 			name = Release;

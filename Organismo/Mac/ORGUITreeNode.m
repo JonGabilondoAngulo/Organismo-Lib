@@ -13,44 +13,67 @@
 - (instancetype)initWithView:(nonnull NSView*)view {
     self = [super init];
     if (self) {
-        self.view = view;
-        self.subviews = [[NSMutableArray alloc] init];
+        self.uiElement = view;
+        self.children = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (NSString*)title {
-    if ([self.view isKindOfClass:[NSWindow class]]) {
-        NSWindow *window = (NSWindow*)self.view;
+    if ([self.uiElement isKindOfClass:[NSWindow class]]) {
+        NSWindow *window = (NSWindow*)self.uiElement;
         return window.title;
     }
     return @"Unknown";
 }
 
 - (NSString*)descriptor {
-    if ([self.view respondsToSelector:@selector(ORG_description)]) {
-//        NSWindow *window = (NSWindow*)self.view;
-//        NSString *descriptor = [[NSString alloc] initWithFormat:@"%@ (%@)", NSStringFromClass(window.class), window.title];
-        return [self.view performSelector:@selector(ORG_description)];
+    if ([self.uiElement respondsToSelector:@selector(ORG_description)]) {
+        return [self.uiElement performSelector:@selector(ORG_description)];
     } else {
-        NSString *descriptor = [[NSString alloc] initWithFormat:@"%@", NSStringFromClass(self.view.class)];
-        return descriptor;
+        
+        return self.className;
     }
-    return self.view.description;
+}
+
+- (NSRect)rect {
+    if ([self.uiElement isKindOfClass:[NSWindow class]]) {
+        NSWindow *window = (NSWindow*)self.uiElement;
+        return window.frame;
+    } else if ([self.uiElement isKindOfClass:[NSView class]]) {
+        NSView *view = (NSView*)self.uiElement;
+        return view.frame;
+    }
+    return NSZeroRect;
+}
+
+- (BOOL)isHidden {
+    if ([self.uiElement isKindOfClass:[NSWindow class]]) {
+        NSWindow *window = (NSWindow*)self.uiElement;
+        return !window.isVisible;
+    } else if ([self.uiElement isKindOfClass:[NSView class]]) {
+        NSView *view = (NSView*)self.uiElement;
+        return view.isHidden;
+    }
+    return NO;
+}
+
+- (NSString*)className {
+    return [[NSString alloc] initWithFormat:@"%@", NSStringFromClass(self.uiElement.class)];
 }
 
 - (NSImage*)thumbnailImage {
     NSImage * image;
     NSBundle *orgFramework = [NSBundle bundleWithIdentifier: @"com.organismo-mobile.Organismo"];
     
-    if ([self.view isKindOfClass:[NSWindow class]]) {
+    if ([self.uiElement isKindOfClass:[NSWindow class]]) {
         image = [orgFramework imageForResource:@"NSWindow_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSPopUpButton class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSPopUpButton class]]) {
         image = [orgFramework imageForResource:@"NSPopUp-Push_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSButton class]]) {
-        NSButton *button = (NSButton*)self.view;
+    } else  if ([self.uiElement isKindOfClass:[NSButton class]]) {
+        NSButton *button = (NSButton*)self.uiElement;
         NSString *buttonType = [button performSelector:@selector(ns_widgetType)];
-        NSLog(@"widget type %@", buttonType);
+        //NSLog(@"widget type %@", buttonType);
         if ([buttonType isEqualToString:@"RadioButton"]) {
             image = [orgFramework imageForResource:@"NSButton-Radio_32_Normal"];
         } else if ([buttonType isEqualToString:@"HelpButton"]) {
@@ -70,30 +93,32 @@
         } else {
             image = [orgFramework imageForResource:@"NSButton-Push_32_Normal"];
         }
-    } else  if ([self.view isKindOfClass:[NSTextField class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSTextField class]]) {
         image = [orgFramework imageForResource:@"NSTextField_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSSecureTextField class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSSecureTextField class]]) {
         image = [orgFramework imageForResource:@"NSSecureTextField_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSSwitch class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSSwitch class]]) {
         image = [orgFramework imageForResource:@"NSSwitch_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSStepper class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSStepper class]]) {
         image = [orgFramework imageForResource:@"NSStepper_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSDatePicker class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSDatePicker class]]) {
         image = [orgFramework imageForResource:@"NSDatePicker_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSSegmentedControl class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSSegmentedControl class]]) {
         image = [orgFramework imageForResource:@"NSSegmentedControl_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSColorWell class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSColorWell class]]) {
         image = [orgFramework imageForResource:@"NSColorWell_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSPanel class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSPanel class]]) {
         image = [orgFramework imageForResource:@"NSPanel_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSPathControl class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSPathControl class]]) {
         image = [orgFramework imageForResource:@"NSPathControl_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSLevelIndicator class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSLevelIndicator class]]) {
         image = [orgFramework imageForResource:@"NSLevelIndicator_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSSplitViewController class]]) {
+    } else  if ([self.uiElement isKindOfClass:[NSSplitViewController class]]) {
         image = [orgFramework imageForResource:@"NSSplitViewControllerHorizontal_32_Normal"];
-    } else  if ([self.view isKindOfClass:[NSProgressIndicator class]]) {
-        NSProgressIndicator *progress = (NSProgressIndicator*)self.view;
+    } else  if ([self.uiElement isKindOfClass:[NSScrollView class]]) {
+        image = [orgFramework imageForResource:@"NSScrollView_16_Normal"];
+    } else  if ([self.uiElement isKindOfClass:[NSProgressIndicator class]]) {
+        NSProgressIndicator *progress = (NSProgressIndicator*)self.uiElement;
         switch (progress.style) {
             case NSProgressIndicatorStyleBar: {
                 if (progress.indeterminate) {
@@ -110,8 +135,8 @@
                 }
             } break;
         }
-    } else  if ([self.view isKindOfClass:[NSSlider class]]) {
-        NSSlider *slider = (NSSlider*)self.view;
+    } else  if ([self.uiElement isKindOfClass:[NSSlider class]]) {
+        NSSlider *slider = (NSSlider*)self.uiElement;
         switch (slider.sliderType) {
             case NSSliderTypeLinear: {
                 if (slider.vertical) {
@@ -133,7 +158,7 @@
             } break;
         }
     } else {
-        NSLog(@"Non handled class: %@", NSStringFromClass(self.view.class));
+        NSLog(@"Non handled class: %@", NSStringFromClass(self.uiElement.class));
     }
     return image;
 }

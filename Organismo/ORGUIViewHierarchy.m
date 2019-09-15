@@ -58,13 +58,13 @@
         }
     }
     
-    // Run subviews. Unless is some kind of control that there is no need to dive in.
+    // Run children. Unless is some kind of control that there is no need to dive in.
     if ([view ORG_ignoreSubviews]) {
         return node;
     }
     
     NSMutableArray * children = [NSMutableArray array];
-    for (UIView *subView in view.subviews) {
+    for (UIView *subView in view.children) {
         NSDictionary * child = [self viewElementTree:subView skipPrivateClasses:skipPrivate viewScreenshots:viewScreenshots];
         if (child) {
             [children addObject:child];
@@ -101,9 +101,9 @@
     // Isn't better to use hitTest ? NO ! hitTest ignores if user labels etc.
     //-
     
-    UIView * view = rootView; // we assume that if no subviews hit the hit is in the rootview
+    UIView * view = rootView; // we assume that if no children hit the hit is in the rootview
     
-    for (UIView * runningView in [rootView.subviews reverseObjectEnumerator]) {
+    for (UIView * runningView in [rootView.children reverseObjectEnumerator]) {
         
         if ([runningView isHidden]) {
             continue;

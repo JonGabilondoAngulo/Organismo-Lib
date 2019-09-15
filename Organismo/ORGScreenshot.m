@@ -55,10 +55,10 @@
         return nil;
     }
     
-    // hide subviews. Unless is some control that we are not diving in, (e.g. Pickers).
+    // hide children. Unless is some control that we are not diving in, (e.g. Pickers).
     NSMutableArray * hiddenSubviews = [NSMutableArray array];
     if (![view ORG_ignoreSubviews]) {
-        for (UIView *subview in view.subviews) {
+        for (UIView *subview in view.children) {
             if (![subview isHidden]) {
                 [subview setHidden:YES];
                 [hiddenSubviews addObject:subview];

@@ -38,16 +38,16 @@
 + (void)childNodes:(ORGUITreeNode*)node skipPrivateClasses:(BOOL)skipPrivate screenshots:(BOOL)takeScreenshots recursive:(BOOL)deep {
 
     NSView *startView;
-    if ([node.view isKindOfClass:[NSWindow class]]) {
-        NSWindow *window = node.view;
+    if ([node.uiElement isKindOfClass:[NSWindow class]]) {
+        NSWindow *window = (NSWindow*)node.uiElement;
         startView = window.contentView;
     } else {
-        startView = node.view;
+        startView = (NSView*)node.uiElement;
     }
     
     for (NSView *subView in startView.subviews) {
         ORGUITreeNode *childNode = [[ORGUITreeNode alloc] initWithView:subView];
-        [node.subviews addObject:childNode];
+        [node.children addObject:childNode];
         if (deep) {
             [self childNodes:childNode skipPrivateClasses:skipPrivate screenshots:takeScreenshots recursive:deep];
         }

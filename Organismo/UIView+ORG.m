@@ -152,7 +152,7 @@ static NSString * const AORGAssociatedKey_Segues = @"ORG_Segues";
 {
     UIView *theView;
     
-    for (UIView * view in [self subviews]) {
+    for (UIView * view in [self children]) {
         if ([view isKindOfClass:subviewClass]) {
             theView = view;
         } else {
