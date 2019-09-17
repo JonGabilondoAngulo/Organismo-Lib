@@ -11,9 +11,12 @@
 @implementation NSWindow (ORG)
 
 - (NSString*)ORG_description {
-    NSString *description = [[NSString alloc] initWithFormat:@"%@ (%@)", NSStringFromClass(self.class), self.title];
+    NSMutableString *description = [[NSMutableString alloc] initWithFormat:@"%@", NSStringFromClass(self.class)];
+    if (self.title.length) {
+        [description appendString:[NSString stringWithFormat:@" (%@)", self.title]];
+    }
     if (!self.isVisible) {
-        description = [description stringByAppendingString:@" [Hidden]"];
+        [description appendString:@" [Hidden]"];
     }
     return description;
 }

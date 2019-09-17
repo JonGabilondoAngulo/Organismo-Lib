@@ -31,10 +31,11 @@ static NSString * const AORGAssociatedKey_Segues = @"ORG_Segues";
     return [self isKindOfClass:[UIControl class]];
 }
 - (BOOL)ORG_ignoreSubviews {
-    return [self ORG_isAppleMap] ||
-    [self ORG_isUIControl] ||
-    [self isKindOfClass:[UITextView class]] ||
-    [self isKindOfClass:[UIPickerView class]];
+    return NO;
+//    return [self ORG_isAppleMap] ||
+//    [self ORG_isUIControl] ||
+//    [self isKindOfClass:[UITextView class]] ||
+//    [self isKindOfClass:[UIPickerView class]];
 }
 - (BOOL)ORG_ignoreGestureRecognizers {
     return self.userInteractionEnabled==NO;

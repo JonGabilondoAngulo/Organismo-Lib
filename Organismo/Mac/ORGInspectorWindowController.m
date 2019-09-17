@@ -93,6 +93,11 @@
         CGMutablePathRef path = CGPathCreateMutable();
         CGPathAddRect(path, nil, _highlightLayer.bounds);
         _highlightLayer.path = path;
+        if (!view.layer) {
+            [view setLayer:[CALayer new]];
+            [view setWantsLayer:YES];
+        }
+        NSAssert(view.layer, @"No CALayer for view. %@", view);
         [view.layer addSublayer:_highlightLayer];
         [_highlightLayer display];
     }
@@ -150,11 +155,11 @@
     
     if ([item isKindOfClass:[ORGUITreeNode class]]) {
         ORGUITreeNode *node = item;
-        if ([node.uiElement isKindOfClass:[NSWindow class]]) {
-            view = [outlineView makeViewWithIdentifier:@"WindowCell" owner:self];
-        } else {
+        //if ([node.uiElement isKindOfClass:[NSWindow class]]) {
+        //    view = [outlineView makeViewWithIdentifier:@"WindowCell" owner:self];
+        //} else {
             view = [outlineView makeViewWithIdentifier:@"MainCell" owner:self];
-        }
+        //}
         view.treeNode = item;
     }
     return view;

@@ -35,22 +35,22 @@
             <rect key="contentRect" x="445" y="259" width="824" height="679"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <value key="minSize" type="size" width="200" height="248"/>
-            <view key="contentView" id="2">
+            <view key="contentView" focusRingType="none" appearanceType="darkAqua" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="824" height="679"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <splitView dividerStyle="thin" vertical="YES" id="edg-LC-nLi">
+                    <splitView focusRingType="none" dividerStyle="thin" vertical="YES" id="edg-LC-nLi">
                         <rect key="frame" x="0.0" y="0.0" width="824" height="679"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="3">
+                            <scrollView focusRingType="none" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="18" horizontalPageScroll="10" verticalLineScroll="18" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="3">
                                 <rect key="frame" x="0.0" y="0.0" width="510" height="679"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" id="o5l-b4-mqq">
                                     <rect key="frame" x="1" y="1" width="508" height="677"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="22" viewBased="YES" indentationPerLevel="16" outlineTableColumn="8" id="6">
+                                        <outlineView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="16" viewBased="YES" indentationPerLevel="16" outlineTableColumn="8" id="6">
                                             <rect key="frame" x="0.0" y="0.0" width="508" height="677"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="1" height="2"/>
@@ -70,20 +70,20 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="MainCell" id="109" userLabel="MainCell" customClass="ORGTableCellView">
-                                                            <rect key="frame" x="0.0" y="1" width="507" height="22"/>
+                                                        <tableCellView identifier="MainCell" focusRingType="none" id="109" userLabel="MainCell" customClass="ORGTableCellView">
+                                                            <rect key="frame" x="0.0" y="1" width="507" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <subviews>
                                                                 <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="113">
-                                                                    <rect key="frame" x="3" y="0.0" width="28" height="22"/>
+                                                                    <rect key="frame" x="3" y="0.0" width="16" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                    <imageCell key="cell" controlSize="small" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="114"/>
+                                                                    <imageCell key="cell" controlSize="small" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="114"/>
                                                                     <connections>
                                                                         <binding destination="109" name="value" keyPath="objectValue.thumbnailImage" id="121"/>
                                                                     </connections>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="112">
-                                                                    <rect key="frame" x="32" y="3" width="452" height="16"/>
+                                                                    <rect key="frame" x="25" y="1" width="475" height="14"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" title="Text Field (uses bindings)" id="115">
                                                                         <font key="font" metaFont="smallSystem"/>
@@ -100,21 +100,21 @@
                                                                 <outlet property="textField" destination="112" id="119"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="WindowCell" id="101" userLabel="Window Cell View" customClass="ORGTableCellView">
-                                                            <rect key="frame" x="0.0" y="25" width="507" height="22"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        <tableCellView identifier="WindowCell" focusRingType="none" id="101" userLabel="Window Cell View" customClass="ORGTableCellView">
+                                                            <rect key="frame" x="0.0" y="19" width="507" height="16"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <subviews>
                                                                 <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="102">
-                                                                    <rect key="frame" x="3" y="0.0" width="28" height="22"/>
+                                                                    <rect key="frame" x="3" y="0.0" width="16" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                    <imageCell key="cell" controlSize="small" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="105"/>
+                                                                    <imageCell key="cell" controlSize="small" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="105"/>
                                                                     <connections>
                                                                         <binding destination="101" name="value" keyPath="objectValue.thumbnailImage" id="Qpt-ej-UtX"/>
                                                                     </connections>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="103">
-                                                                    <rect key="frame" x="32" y="3" width="475" height="16"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <rect key="frame" x="25" y="1" width="475" height="14"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" title="Window Description" id="104">
                                                                         <font key="font" metaFont="smallSystem"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -168,16 +168,16 @@
                                         </connections>
                                     </segmentedControl>
                                     <tabView fixedFrame="YES" controlSize="small" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="6gM-mx-hTQ">
-                                        <rect key="frame" x="1" y="0.0" width="310" height="642"/>
+                                        <rect key="frame" x="1" y="0.0" width="312" height="642"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <tabViewItems>
                                             <tabViewItem label="Properties" identifier="" id="FPm-WI-oco" userLabel="Properties">
-                                                <view key="view" id="3Hw-91-YwF" customClass="ORGElementPropertiesView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="642"/>
+                                                <view key="view" ambiguous="YES" id="3Hw-91-YwF" customClass="ORGElementPropertiesView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="642"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sdo-JZ-MBc">
-                                                            <rect key="frame" x="209" y="548" width="70" height="21"/>
+                                                            <rect key="frame" x="211" y="548" width="70" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="980-cx-WNF">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="EVf-DF-y8u"/>
@@ -186,12 +186,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
+                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectH.integerValue" id="VbT-C1-ENa"/>
                                                                 <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="cl0-LG-CLw" id="JJR-GO-6Jk">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNil</string>
                                                                     </dictionary>
                                                                 </binding>
-                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectH.integerValue" id="VbT-C1-ENa"/>
                                                                 <binding destination="-2" name="enabled" keyPath="selectedNode" id="cl0-LG-CLw">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNotNil</string>
@@ -201,17 +201,17 @@
                                                             </connections>
                                                         </textField>
                                                         <stepper focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sR5-kK-YYa">
-                                                            <rect key="frame" x="279" y="547" width="15" height="22"/>
+                                                            <rect key="frame" x="281" y="547" width="15" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <stepperCell key="cell" controlSize="small" continuous="YES" focusRingType="none" alignment="left" maxValue="10000" id="HJ9-D5-WxJ"/>
                                                             <connections>
                                                                 <action selector="rectHChanged:" target="3Hw-91-YwF" id="kAE-yN-stM"/>
+                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectH.integerValue" id="bwH-3j-PFq"/>
                                                                 <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="IiB-05-xZR" id="2gn-NP-2vX">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNil</string>
                                                                     </dictionary>
                                                                 </binding>
-                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectH.integerValue" id="bwH-3j-PFq"/>
                                                                 <binding destination="-2" name="enabled" keyPath="selectedNode" id="IiB-05-xZR">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNotNil</string>
@@ -220,7 +220,7 @@
                                                             </connections>
                                                         </stepper>
                                                         <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAQ-Su-cKQ">
-                                                            <rect key="frame" x="87" y="548" width="70" height="21"/>
+                                                            <rect key="frame" x="89" y="548" width="70" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="p4u-OD-3XF">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="kPe-Z4-Pws"/>
@@ -229,12 +229,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
+                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectW.integerValue" id="rzc-r1-Lov"/>
                                                                 <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="zQD-w7-sbM" id="uWE-Op-och">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNil</string>
                                                                     </dictionary>
                                                                 </binding>
-                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectW.integerValue" id="rzc-r1-Lov"/>
                                                                 <binding destination="-2" name="enabled" keyPath="selectedNode" id="zQD-w7-sbM">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNotNil</string>
@@ -244,17 +244,17 @@
                                                             </connections>
                                                         </textField>
                                                         <stepper focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dG-fa-eVj">
-                                                            <rect key="frame" x="157" y="547" width="15" height="22"/>
+                                                            <rect key="frame" x="159" y="547" width="15" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <stepperCell key="cell" controlSize="small" continuous="YES" focusRingType="none" alignment="left" maxValue="10000" id="2rW-XU-2Fa"/>
                                                             <connections>
                                                                 <action selector="rectWChanged:" target="3Hw-91-YwF" id="A7A-Jf-sif"/>
+                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectW.integerValue" id="uKR-s3-AyK"/>
                                                                 <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="g0C-tl-1q2" id="bLe-3n-M5P">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNil</string>
                                                                     </dictionary>
                                                                 </binding>
-                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectW.integerValue" id="uKR-s3-AyK"/>
                                                                 <binding destination="-2" name="enabled" keyPath="selectedNode" id="g0C-tl-1q2">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNotNil</string>
@@ -263,7 +263,7 @@
                                                             </connections>
                                                         </stepper>
                                                         <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lFj-hO-6pt">
-                                                            <rect key="frame" x="209" y="585" width="70" height="21"/>
+                                                            <rect key="frame" x="211" y="585" width="70" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="JPD-jO-fvQ">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="VZT-Ks-TEh"/>
@@ -272,32 +272,32 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="AMd-6v-dN2" id="k6L-if-TLK">
-                                                                    <dictionary key="options">
-                                                                        <string key="NSValueTransformerName">NSIsNil</string>
-                                                                    </dictionary>
-                                                                </binding>
                                                                 <binding destination="-2" name="value" keyPath="propertiesView.rectY.integerValue" id="7y2-a9-err"/>
                                                                 <binding destination="-2" name="enabled" keyPath="selectedNode" id="AMd-6v-dN2">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNotNil</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="AMd-6v-dN2" id="k6L-if-TLK">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">NSIsNil</string>
+                                                                    </dictionary>
+                                                                </binding>
                                                                 <outlet property="delegate" destination="3Hw-91-YwF" id="304-k6-h4X"/>
                                                             </connections>
                                                         </textField>
                                                         <stepper focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRx-As-smx">
-                                                            <rect key="frame" x="279" y="584" width="15" height="22"/>
+                                                            <rect key="frame" x="281" y="584" width="15" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <stepperCell key="cell" controlSize="small" continuous="YES" focusRingType="none" alignment="left" maxValue="10000" id="ktS-Iu-Jcf"/>
                                                             <connections>
                                                                 <action selector="rectYChanged:" target="3Hw-91-YwF" id="b5F-3d-qgL"/>
+                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectY.integerValue" id="JUk-LT-HGW"/>
                                                                 <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="NN4-Uu-n6a" id="FC3-bf-Laa">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNil</string>
                                                                     </dictionary>
                                                                 </binding>
-                                                                <binding destination="-2" name="value" keyPath="propertiesView.rectY.integerValue" id="JUk-LT-HGW"/>
                                                                 <binding destination="-2" name="enabled" keyPath="selectedNode" id="NN4-Uu-n6a">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNotNil</string>
@@ -323,7 +323,7 @@
                                                             </connections>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KaV-OC-63k">
-                                                            <rect key="frame" x="68" y="550" width="15" height="14"/>
+                                                            <rect key="frame" x="70" y="550" width="15" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="W" id="AKP-ge-jvh">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -339,7 +339,7 @@
                                                             </connections>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4KW-SF-up8">
-                                                            <rect key="frame" x="191" y="550" width="15" height="14"/>
+                                                            <rect key="frame" x="193" y="550" width="15" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="H" id="U7i-UD-NTM">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -355,7 +355,7 @@
                                                             </connections>
                                                         </textField>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opP-Yb-dG0">
-                                                            <rect key="frame" x="191" y="588" width="15" height="14"/>
+                                                            <rect key="frame" x="193" y="588" width="15" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="Y" id="qmc-57-siS">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -371,7 +371,7 @@
                                                             </connections>
                                                         </textField>
                                                         <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d39-XZ-cmM">
-                                                            <rect key="frame" x="87" y="585" width="70" height="21"/>
+                                                            <rect key="frame" x="89" y="585" width="70" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="right" drawsBackground="YES" id="Uhp-QM-3n5">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="TP5-Wg-rLY">
@@ -382,41 +382,41 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="2MO-Bf-txE" id="Mxa-0y-Fmu">
-                                                                    <dictionary key="options">
-                                                                        <string key="NSValueTransformerName">NSIsNil</string>
-                                                                    </dictionary>
-                                                                </binding>
                                                                 <binding destination="-2" name="value" keyPath="propertiesView.rectX.integerValue" id="sFt-2r-khg"/>
                                                                 <binding destination="-2" name="enabled" keyPath="selectedNode" id="2MO-Bf-txE">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNotNil</string>
                                                                     </dictionary>
                                                                 </binding>
-                                                                <outlet property="delegate" destination="3Hw-91-YwF" id="JFX-wc-f3f"/>
-                                                            </connections>
-                                                        </textField>
-                                                        <stepper focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kgp-Ol-1Er">
-                                                            <rect key="frame" x="157" y="584" width="15" height="22"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <stepperCell key="cell" controlSize="small" continuous="YES" focusRingType="none" alignment="left" maxValue="10000" id="NH9-A1-N0o"/>
-                                                            <connections>
-                                                                <action selector="rectXChanged:" target="3Hw-91-YwF" id="gAr-qv-S5O"/>
-                                                                <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="exb-c6-yij" id="ws2-f5-lkv">
+                                                                <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="2MO-Bf-txE" id="Mxa-0y-Fmu">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNil</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <outlet property="delegate" destination="3Hw-91-YwF" id="JFX-wc-f3f"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <stepper focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kgp-Ol-1Er">
+                                                            <rect key="frame" x="159" y="584" width="15" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                            <stepperCell key="cell" controlSize="small" continuous="YES" focusRingType="none" alignment="left" maxValue="10000" id="NH9-A1-N0o"/>
+                                                            <connections>
+                                                                <action selector="rectXChanged:" target="3Hw-91-YwF" id="gAr-qv-S5O"/>
                                                                 <binding destination="-2" name="value" keyPath="propertiesView.rectX.integerValue" id="7xS-fe-SxB"/>
                                                                 <binding destination="-2" name="enabled" keyPath="selectedNode" id="exb-c6-yij">
                                                                     <dictionary key="options">
                                                                         <string key="NSValueTransformerName">NSIsNotNil</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="-2" name="hidden" keyPath="selectedNode" previousBinding="exb-c6-yij" id="ws2-f5-lkv">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSValueTransformerName">NSIsNil</string>
+                                                                    </dictionary>
+                                                                </binding>
                                                             </connections>
                                                         </stepper>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8t9-qF-BX4">
-                                                            <rect key="frame" x="68" y="588" width="15" height="14"/>
+                                                            <rect key="frame" x="70" y="588" width="15" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="X" id="eLY-2d-gBQ">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -441,25 +441,25 @@
                                                 </view>
                                             </tabViewItem>
                                             <tabViewItem label="Class" identifier="" id="hHX-04-pDs">
-                                                <view key="view" ambiguous="YES" id="X21-cq-Jpz" customClass="ORGElementClassView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="642"/>
+                                                <view key="view" id="X21-cq-Jpz" customClass="ORGElementClassView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="642"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEP-nG-mNl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="593"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="312" height="593"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <clipView key="contentView" ambiguous="YES" id="v7m-mo-gFY">
-                                                                <rect key="frame" x="1" y="0.0" width="308" height="592"/>
-                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <rect key="frame" x="1" y="0.0" width="310" height="592"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <tableView focusRingType="none" verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" headerView="HeN-Sf-bIP" id="RuP-pv-8H5">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="308" height="567"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="310" height="567"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                                         <tableColumns>
-                                                                            <tableColumn width="305" minWidth="40" maxWidth="1000" id="96q-hl-2mF">
+                                                                            <tableColumn width="307" minWidth="40" maxWidth="1000" id="96q-hl-2mF">
                                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Methods">
                                                                                     <font key="font" metaFont="smallSystem"/>
                                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -497,12 +497,12 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </scroller>
                                                             <tableHeaderView key="headerView" id="HeN-Sf-bIP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="308" height="25"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="310" height="25"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </tableHeaderView>
                                                         </scrollView>
                                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgY-Uf-aVG">
-                                                            <rect key="frame" x="80" y="613" width="223" height="22"/>
+                                                            <rect key="frame" x="82" y="613" width="223" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" altersStateOfSelectedItem="NO" selectedItem="bsG-FB-EPu" id="qt2-0I-ujK">
                                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -521,7 +521,7 @@
                                                             </connections>
                                                         </popUpButton>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MM9-3j-CbM">
-                                                            <rect key="frame" x="12" y="616" width="65" height="14"/>
+                                                            <rect key="frame" x="14" y="616" width="65" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="Hierarchy" id="iaw-d2-xsP">
                                                                 <font key="font" metaFont="smallSystem"/>

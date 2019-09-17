@@ -20,17 +20,17 @@
 
 @implementation ORGTableCellView
 
-- (void)layoutViewsForSmallSize:(BOOL)smallSize animated:(BOOL)animated {
-    if (self.isSmallSize != smallSize) {
-        _isSmallSize = smallSize;
-        CGFloat targetAlpha = self.isSmallSize ? 0 : 1;
-        if (animated) {
-            self.subTitleTextField.animator.alphaValue = targetAlpha;
-        } else {
-            self.subTitleTextField.alphaValue = targetAlpha;
-        }
-    }
-}
+//- (void)layoutViewsForSmallSize:(BOOL)smallSize animated:(BOOL)animated {
+//    if (self.isSmallSize != smallSize) {
+//        _isSmallSize = smallSize;
+//        CGFloat targetAlpha = self.isSmallSize ? 0 : 1;
+//        if (animated) {
+//            self.subTitleTextField.animator.alphaValue = targetAlpha;
+//        } else {
+//            self.subTitleTextField.alphaValue = targetAlpha;
+//        }
+//    }
+//}
 
 - (void)ensureTrackingArea {
     if (_trackingArea == nil) {
