@@ -11,6 +11,7 @@
 		03007BB2232A1C3700DAF421 /* ORGElementPropertiesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03007BB0232A1C3700DAF421 /* ORGElementPropertiesView.m */; };
 		0300F9D922EECA73007DF323 /* ORGUITreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0300F9D722EECA73007DF323 /* ORGUITreeNode.m */; };
 		0300F9DA22EECA73007DF323 /* ORGUITreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 0300F9D822EECA73007DF323 /* ORGUITreeNode.h */; };
+		031586B12337C66C0080F0EB /* Organismo-mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031586B02337C66C0080F0EB /* Organismo-mac.storyboard */; };
 		031F745F1D4015F400DDC876 /* UITextView+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 031F745D1D4015F400DDC876 /* UITextView+ORG.h */; };
 		031F74601D4015F400DDC876 /* UITextView+ORG.m in Sources */ = {isa = PBXBuildFile; fileRef = 031F745E1D4015F400DDC876 /* UITextView+ORG.m */; };
 		031F74631D40167D00DDC876 /* UITextField+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 031F74611D40167D00DDC876 /* UITextField+ORG.h */; };
@@ -202,6 +203,7 @@
 		0300F9D722EECA73007DF323 /* ORGUITreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGUITreeNode.m; path = Organismo/Mac/ORGUITreeNode.m; sourceTree = "<group>"; };
 		0300F9D822EECA73007DF323 /* ORGUITreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGUITreeNode.h; path = Organismo/Mac/ORGUITreeNode.h; sourceTree = "<group>"; };
 		0300F9DD22EECB56007DF323 /* mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "mac-Info.plist"; path = "Organismo/Mac/mac-Info.plist"; sourceTree = "<group>"; };
+		031586B02337C66C0080F0EB /* Organismo-mac.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Organismo-mac.storyboard"; path = "Organismo/Mac/Organismo-mac.storyboard"; sourceTree = "<group>"; };
 		031F745D1D4015F400DDC876 /* UITextView+ORG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ORG.h"; sourceTree = "<group>"; };
 		031F745E1D4015F400DDC876 /* UITextView+ORG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ORG.m"; sourceTree = "<group>"; };
 		031F74611D40167D00DDC876 /* UITextField+ORG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ORG.h"; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 			children = (
 				0394907D22D33C280029BB9B /* ORGInspectorWindowController.xib */,
 				033DCFAC22D5F97000295555 /* Media.xcassets */,
+				031586B02337C66C0080F0EB /* Organismo-mac.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -997,6 +1000,7 @@
 			files = (
 				033DCFAD22D5F97000295555 /* Media.xcassets in Resources */,
 				0394907E22D33C280029BB9B /* ORGInspectorWindowController.xib in Resources */,
+				031586B12337C66C0080F0EB /* Organismo-mac.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
