@@ -33,6 +33,11 @@
 		032C9FE522C8CA2700B2DBEA /* NSApplication+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 032C9FE322C8CA2700B2DBEA /* NSApplication+ORG.h */; };
 		032C9FE622C8CA2700B2DBEA /* NSApplication+ORG.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C9FE422C8CA2700B2DBEA /* NSApplication+ORG.m */; };
 		032C9FE822C8CC2600B2DBEA /* OrganismoPrefixHeader-mac.pch in Headers */ = {isa = PBXBuildFile; fileRef = 032C9FE722C8CC2600B2DBEA /* OrganismoPrefixHeader-mac.pch */; };
+		032CF27024081AF200461E2B /* ORGLibrariesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 032CF26E24081AF200461E2B /* ORGLibrariesViewController.h */; };
+		032CF27124081AF200461E2B /* ORGLibrariesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CF26F24081AF200461E2B /* ORGLibrariesViewController.m */; };
+		032CF27424081FDD00461E2B /* ORGUITreeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 032CF27224081FDD00461E2B /* ORGUITreeViewController.h */; };
+		032CF27524081FDD00461E2B /* ORGUITreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CF27324081FDD00461E2B /* ORGUITreeViewController.m */; };
+		032CF2762409AA3C00461E2B /* ORGInspectorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394907822D335BE0029BB9B /* ORGInspectorWindowController.m */; };
 		033677E11D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 033677DF1D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.h */; };
 		033677E21D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.m in Sources */ = {isa = PBXBuildFile; fileRef = 033677E01D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.m */; };
 		033677F11D3E67F1009B86A4 /* UINibDecoderORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 033677EF1D3E67F1009B86A4 /* UINibDecoderORG.h */; };
@@ -73,8 +78,6 @@
 		0357A11E1CBEE52C00A35556 /* CLHeading+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 0357A11C1CBEE52C00A35556 /* CLHeading+ORG.h */; };
 		0357A11F1CBEE52C00A35556 /* CLHeading+ORG.m in Sources */ = {isa = PBXBuildFile; fileRef = 0357A11D1CBEE52C00A35556 /* CLHeading+ORG.m */; };
 		0394907A22D335BE0029BB9B /* ORGInspectorWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0394907722D335BE0029BB9B /* ORGInspectorWindowController.h */; };
-		0394907B22D335BE0029BB9B /* ORGInspectorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394907822D335BE0029BB9B /* ORGInspectorWindowController.m */; };
-		0394907E22D33C280029BB9B /* ORGInspectorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0394907D22D33C280029BB9B /* ORGInspectorWindowController.xib */; };
 		0394908122D351790029BB9B /* ORGTableCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0394907F22D351790029BB9B /* ORGTableCellView.h */; };
 		0394908222D351790029BB9B /* ORGTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394908022D351790029BB9B /* ORGTableCellView.m */; };
 		039C336222C7D63600E61DA8 /* NSObject+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DA66BE1CBD00EF00E26CAA /* NSObject+ORG.h */; };
@@ -225,6 +228,10 @@
 		032C9FE322C8CA2700B2DBEA /* NSApplication+ORG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSApplication+ORG.h"; path = "Organismo/NSApplication+ORG.h"; sourceTree = "<group>"; };
 		032C9FE422C8CA2700B2DBEA /* NSApplication+ORG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSApplication+ORG.m"; path = "Organismo/NSApplication+ORG.m"; sourceTree = "<group>"; };
 		032C9FE722C8CC2600B2DBEA /* OrganismoPrefixHeader-mac.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrganismoPrefixHeader-mac.pch"; sourceTree = "<group>"; };
+		032CF26E24081AF200461E2B /* ORGLibrariesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORGLibrariesViewController.h; path = Organismo/Mac/ORGLibrariesViewController.h; sourceTree = "<group>"; };
+		032CF26F24081AF200461E2B /* ORGLibrariesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ORGLibrariesViewController.m; path = Organismo/Mac/ORGLibrariesViewController.m; sourceTree = "<group>"; };
+		032CF27224081FDD00461E2B /* ORGUITreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORGUITreeViewController.h; path = Organismo/Mac/ORGUITreeViewController.h; sourceTree = "<group>"; };
+		032CF27324081FDD00461E2B /* ORGUITreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ORGUITreeViewController.m; path = Organismo/Mac/ORGUITreeViewController.m; sourceTree = "<group>"; };
 		033677DF1D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboardSegue+ORG.h"; sourceTree = "<group>"; };
 		033677E01D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboardSegue+ORG.m"; sourceTree = "<group>"; };
 		033677EF1D3E67F1009B86A4 /* UINibDecoderORG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINibDecoderORG.h; sourceTree = "<group>"; };
@@ -267,7 +274,6 @@
 		0357A11D1CBEE52C00A35556 /* CLHeading+ORG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLHeading+ORG.m"; sourceTree = "<group>"; };
 		0394907722D335BE0029BB9B /* ORGInspectorWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORGInspectorWindowController.h; path = Organismo/Mac/ORGInspectorWindowController.h; sourceTree = "<group>"; };
 		0394907822D335BE0029BB9B /* ORGInspectorWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ORGInspectorWindowController.m; path = Organismo/Mac/ORGInspectorWindowController.m; sourceTree = "<group>"; };
-		0394907D22D33C280029BB9B /* ORGInspectorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORGInspectorWindowController.xib; path = Organismo/Mac/ORGInspectorWindowController.xib; sourceTree = "<group>"; };
 		0394907F22D351790029BB9B /* ORGTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGTableCellView.h; path = Organismo/Mac/ORGTableCellView.h; sourceTree = "<group>"; };
 		0394908022D351790029BB9B /* ORGTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGTableCellView.m; path = Organismo/Mac/ORGTableCellView.m; sourceTree = "<group>"; };
 		039C339422C7D63600E61DA8 /* Organismo-mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Organismo-mac.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -456,23 +462,35 @@
 				032C9FE422C8CA2700B2DBEA /* NSApplication+ORG.m */,
 				034B1B5E22CE4F9A00CFEDD0 /* ORGNSViewHierarchy.h */,
 				034B1B5F22CE4F9A00CFEDD0 /* ORGNSViewHierarchy.m */,
+				0394907722D335BE0029BB9B /* ORGInspectorWindowController.h */,
+				0394907822D335BE0029BB9B /* ORGInspectorWindowController.m */,
+				032CF26E24081AF200461E2B /* ORGLibrariesViewController.h */,
+				032CF26F24081AF200461E2B /* ORGLibrariesViewController.m */,
+				032CF2772409ADCB00461E2B /* UI Tree Inspector */,
+				033DCF9C22D4D69A00295555 /* Categories */,
+				034B1B6222CE4FA000CFEDD0 /* Resources */,
+				0300F9DC22EECB40007DF323 /* Supporting Files */,
+			);
+			name = "Organismo-mac";
+			sourceTree = "<group>";
+		};
+		032CF2772409ADCB00461E2B /* UI Tree Inspector */ = {
+			isa = PBXGroup;
+			children = (
+				032CF27224081FDD00461E2B /* ORGUITreeViewController.h */,
+				032CF27324081FDD00461E2B /* ORGUITreeViewController.m */,
+				03007BAF232A1C3700DAF421 /* ORGElementPropertiesView.h */,
+				03007BB0232A1C3700DAF421 /* ORGElementPropertiesView.m */,
+				03AF319B232ABE2E00437482 /* ORGElementClassView.h */,
+				03AF319C232ABE2E00437482 /* ORGElementClassView.m */,
 				034B1B6322CFA7F300CFEDD0 /* ORGUITree.h */,
 				034B1B6422CFA7F300CFEDD0 /* ORGUITree.m */,
 				0300F9D822EECA73007DF323 /* ORGUITreeNode.h */,
 				0300F9D722EECA73007DF323 /* ORGUITreeNode.m */,
 				0394907F22D351790029BB9B /* ORGTableCellView.h */,
 				0394908022D351790029BB9B /* ORGTableCellView.m */,
-				0394907722D335BE0029BB9B /* ORGInspectorWindowController.h */,
-				0394907822D335BE0029BB9B /* ORGInspectorWindowController.m */,
-				03007BAF232A1C3700DAF421 /* ORGElementPropertiesView.h */,
-				03007BB0232A1C3700DAF421 /* ORGElementPropertiesView.m */,
-				03AF319B232ABE2E00437482 /* ORGElementClassView.h */,
-				03AF319C232ABE2E00437482 /* ORGElementClassView.m */,
-				033DCF9C22D4D69A00295555 /* Categories */,
-				034B1B6222CE4FA000CFEDD0 /* Resources */,
-				0300F9DC22EECB40007DF323 /* Supporting Files */,
 			);
-			name = "Organismo-mac";
+			name = "UI Tree Inspector";
 			sourceTree = "<group>";
 		};
 		033DCF9C22D4D69A00295555 /* Categories */ = {
@@ -491,7 +509,6 @@
 		034B1B6222CE4FA000CFEDD0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0394907D22D33C280029BB9B /* ORGInspectorWindowController.xib */,
 				033DCFAC22D5F97000295555 /* Media.xcassets */,
 				031586B02337C66C0080F0EB /* Organismo-mac.storyboard */,
 			);
@@ -794,6 +811,8 @@
 				032C9FE522C8CA2700B2DBEA /* NSApplication+ORG.h in Headers */,
 				033DCFA722D4D70200295555 /* NSButton+ORG.h in Headers */,
 				033DCFA322D4D6EA00295555 /* NSControl+ORG.h in Headers */,
+				032CF27424081FDD00461E2B /* ORGUITreeViewController.h in Headers */,
+				032CF27024081AF200461E2B /* ORGLibrariesViewController.h in Headers */,
 				039C336222C7D63600E61DA8 /* NSObject+ORG.h in Headers */,
 				039C338C22C7D63600E61DA8 /* Organismo.h in Headers */,
 				032C9FE822C8CC2600B2DBEA /* OrganismoPrefixHeader-mac.pch in Headers */,
@@ -999,7 +1018,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				033DCFAD22D5F97000295555 /* Media.xcassets in Resources */,
-				0394907E22D33C280029BB9B /* ORGInspectorWindowController.xib in Resources */,
 				031586B12337C66C0080F0EB /* Organismo-mac.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1111,9 +1129,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0300F9D922EECA73007DF323 /* ORGUITreeNode.m in Sources */,
+				032CF2762409AA3C00461E2B /* ORGInspectorWindowController.m in Sources */,
 				033DCFA422D4D6EA00295555 /* NSControl+ORG.m in Sources */,
+				032CF27524081FDD00461E2B /* ORGUITreeViewController.m in Sources */,
 				034B1B6622CFA7F300CFEDD0 /* ORGUITree.m in Sources */,
-				0394907B22D335BE0029BB9B /* ORGInspectorWindowController.m in Sources */,
 				03AF319E232ABE2E00437482 /* ORGElementClassView.m in Sources */,
 				034B1B6122CE4F9A00CFEDD0 /* ORGNSViewHierarchy.m in Sources */,
 				033DCFA822D4D70200295555 /* NSButton+ORG.m in Sources */,
@@ -1121,6 +1140,7 @@
 				03007BB2232A1C3700DAF421 /* ORGElementPropertiesView.m in Sources */,
 				033DCFA022D4D6C800295555 /* NSWindow+ORG.m in Sources */,
 				0394908222D351790029BB9B /* ORGTableCellView.m in Sources */,
+				032CF27124081AF200461E2B /* ORGLibrariesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

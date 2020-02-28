@@ -34,73 +34,6 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    
-    NSArray<NSWindow*> *windows = [ORGNSViewHierarchy appWindows:NSApp];
-    
-    self.tree = [[ORGUITree alloc] init];
-    self.tree.windows = [[NSMutableArray alloc] init];
-    for (NSWindow *window in windows) {
-        [self.tree.windows addObject:[[ORGUITreeNode alloc] initWithView:(NSView*)window]];
-    }
-    for (ORGUITreeNode *node in self.tree.windows) {
-        [ORGNSViewHierarchy childNodes:node skipPrivateClasses:NO screenshots:NO recursive:YES];
-    }
-
-    [self.outlineView reloadData];
-        
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(highlightItem:) name:@"HIGHLIGHT-ELEMENT" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeHighlight:) name:@"REMOVE-HIGHLIGHT" object:nil];
-    
-    self.classHierarchy = @"NSObject";
-    //[self.classHierarchy addObjectsFromArray:@[@"NSObject", @"NSObject", @"NSObject", @"NSObject"]];
-}
-
-- (void)removeHighlight:(NSNotification*)notitication {
-    if (_highlightLayer) {
-        [_highlightLayer removeFromSuperlayer];
-        _highlightLayer = nil;
-    }
-}
-
-- (void)highlightItem:(NSNotification*)notitication {
-    NSView *view;
-    
-    ORGTableCellView *cell = notitication.object;
-    NSAssert(cell, @"Missing object in notification.");
-    ORGUITreeNode *node = cell.treeNode;
-    NSAssert(node, @"Missing object in notification.");
-
-    if ([node.uiElement isKindOfClass:NSWindow.class]) {
-        NSWindow *window = (NSWindow*)node.uiElement;
-        if (window.visible) {
-            view = window.contentView;
-        }
-    } else {
-        view = (NSView*)node.uiElement;
-        if (view.hidden) {
-            view = nil;
-        }
-    }
-    
-    if (view) {
-        _highlightLayer = [CAShapeLayer layer];
-        _highlightLayer.bounds = view.bounds;
-        _highlightLayer.lineWidth = 4;
-        _highlightLayer.fillColor = CGColorCreateGenericRGB(0.0, 0.0, 0.0, 0.0);
-        _highlightLayer.strokeColor = CGColorCreateGenericRGB(1.0, 0.5, 0.5, 1.0);
-        _highlightLayer.anchorPoint = CGPointMake(0.0f, 0.0f);
-
-        CGMutablePathRef path = CGPathCreateMutable();
-        CGPathAddRect(path, nil, _highlightLayer.bounds);
-        _highlightLayer.path = path;
-        if (!view.layer) {
-            [view setLayer:[CALayer new]];
-            [view setWantsLayer:YES];
-        }
-        NSAssert(view.layer, @"No CALayer for view. %@", view);
-        [view.layer addSublayer:_highlightLayer];
-        [_highlightLayer display];
-    }
 }
 
 #pragma mark - NSWindowDelegate
@@ -177,11 +110,5 @@
     [self.classView showElement:self.selectedNode];
 }
 
-#pragma mark - Actions
-
-
-- (IBAction)elementViewSelection:(NSSegmentedControl *)sender {
-    [self.tabView selectTabViewItemAtIndex:sender.selectedSegment];
-}
 
 @end

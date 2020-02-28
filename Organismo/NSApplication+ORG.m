@@ -139,12 +139,19 @@ static NSMutableArray *windowControllers;
 }
 
 - (void)newWindowWithControllerClass:(Class)c {
-    NSWindowController *controller = [[c alloc] init];
-    if (windowControllers == nil) {
-        windowControllers = [NSMutableArray array];
+    
+    @try {
+        NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Organismo-mac" bundle:[NSBundle bundleForClass:NSClassFromString(@"ORGInspectorWindowController")]];
+        NSWindowController *windowController = [sb instantiateInitialController];
+        
+        if (windowControllers == nil) {
+            windowControllers = [NSMutableArray array];
+        }
+        [windowControllers addObject:windowController];
+        [windowController showWindow:self];
+    } @catch (NSException *exception) {
+        NSLog(@"ERROR. Exception: %@. At:%s", exception, __PRETTY_FUNCTION__);
     }
-    [windowControllers addObject:controller];
-    [controller showWindow:self];
 }
 
 

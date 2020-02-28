@@ -14,13 +14,11 @@
 
 @property (weak) IBOutlet NSTableView *methodsTableView;
 @property (strong) IBOutlet NSArrayController *methodsArrayController;
-
+@property (strong) IBOutlet NSArrayController *classHierarchyArrayController;
 @property (nonatomic) ORGUITreeNode *node;
-@property (nonatomic) NSMutableArray<NSString*> *methods;
-@property (nonatomic) NSArray<NSString*> *classHierarchy;
 
-- (NSArray*)buildClassHierarchy:(Class)class;
-- (void)showClass:(Class)class;
+- (void)showClassHierarchy:(Class)class;
+- (void)showClassMethods:(Class)class;
 @end
 
 @implementation ORGElementClassView
@@ -28,36 +26,28 @@
 - (void)showElement:(ORGUITreeNode*)node {
     
     self.node = node;
-    self.classHierarchy = [self buildClassHierarchy:node.uiElement.class];
-    [self showClass:node.uiElement.class];
-}
-
-- (NSArray*)buildClassHierarchy:(Class)class {
-    NSMutableArray *hierarchy = [NSMutableArray array];
-    for ( Class currentClass = class; currentClass; currentClass = currentClass.superclass) {
-        [hierarchy addObject:NSStringFromClass(currentClass)];
-    }
-    return hierarchy;
+    [self showClassHierarchy:node.uiElement.class];
+    [self showClassMethods:node.uiElement.class];
 }
 
 - (IBAction)hierarchyPathChanged:(NSPopUpButton *)sender {
     
-    NSString *className = self.classHierarchy[sender.indexOfSelectedItem];
+    NSString *className = [self.classHierarchyArrayController arrangedObjects][[sender indexOfSelectedItem]];
     if (!className) {
         return;
     }
-    [self showClass:NSClassFromString(className)];
+    [self showClassMethods:NSClassFromString(className)];
 }
 
-- (void)showClass:(Class)class {
-    
-    if (self.methods) {
-        [self.methodsArrayController removeObjects:self.methods];
-    } else {
-        self.methods = [NSMutableArray array];
-        self.methodsArrayController.content = self.methods;
+- (void)showClassHierarchy:(Class)class {
+    [self.classHierarchyArrayController removeObjects:[self.classHierarchyArrayController arrangedObjects]];
+    for ( Class currentClass = class; currentClass; currentClass = currentClass.superclass) {
+        [self.classHierarchyArrayController addObject:NSStringFromClass(currentClass)];
     }
-    
+}
+
+- (void)showClassMethods:(Class)class {
+    [self.methodsArrayController removeObjects:[self.methodsArrayController arrangedObjects]];
     unsigned int classCount;
     Method *methodsList = class_copyMethodList(class, &classCount);
     for (unsigned int i = 0; i < classCount; i++) {

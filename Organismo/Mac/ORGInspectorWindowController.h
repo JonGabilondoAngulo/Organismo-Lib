@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSString *classHierarchy;
 @property (nonatomic, nullable) ORGUITreeNode *selectedNode;
-@property (strong) IBOutlet NSArrayController *methodsArrayController;
 
 
 @end
