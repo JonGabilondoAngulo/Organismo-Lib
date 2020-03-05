@@ -7,11 +7,9 @@
  */
 
 @import Cocoa;
-@class ORGUITreeNode;
 
-@interface ORGTableCellView : NSTableCellView
+@interface ORGBaseTableCellView : NSTableCellView
 
-@property (weak) ORGUITreeNode *treeNode;
 @property (assign) BOOL selected;
 
 @end

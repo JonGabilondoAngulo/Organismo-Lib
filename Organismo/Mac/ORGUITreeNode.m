@@ -7,6 +7,7 @@
 //
 
 #import "ORGUITreeNode.h"
+#import "NSBundle+ORG.h"
 
 @implementation ORGUITreeNode
 
@@ -64,7 +65,7 @@
 
 - (NSImage*)thumbnailImage {
     NSImage * image;
-    NSBundle *orgFramework = [NSBundle bundleWithIdentifier: @"com.organismo-mobile.Organismo"];
+    NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
     
     if ([self.uiElement isKindOfClass:[NSWindow class]]) {
         image = [orgFramework imageForResource:@"NSWindow_32_Normal"];

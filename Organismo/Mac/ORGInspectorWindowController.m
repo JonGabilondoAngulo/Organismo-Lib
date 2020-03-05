@@ -13,17 +13,16 @@
 #import "ORGUITreeNode.h"
 #import "ORGNSViewHierarchy.h"
 #import "ORGTableCellView.h"
-#import <Quartz/Quartz.h>
+#import "ORGUITreeViewController.h"
+#import "ORGLibrariesViewController.h"
+#import "ORGClassesViewController.h"
+#import "NSBundle+ORG.h"
+@import Quartz;
 
 @interface ORGInspectorWindowController ()
-
-@property (weak) IBOutlet NSTabView *tabView;
-@property (weak) IBOutlet NSOutlineView *outlineView;
-@property (weak) IBOutlet ORGElementPropertiesView *propertiesView;
-@property (nonatomic) ORGUITree *tree;
-@property (nonatomic) CAShapeLayer *highlightLayer;
-@property (weak) IBOutlet ORGElementClassView *classView;
-
+@property (nonatomic) ORGUITreeViewController *uiTreeViewController;
+@property (nonatomic) ORGLibrariesViewController *librariesViewController;
+@property (nonatomic) ORGClassesViewController *classesViewController;
 @end
 
 @implementation ORGInspectorWindowController
@@ -34,80 +33,30 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    
+    NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Organismo-mac" bundle:[NSBundle ORGFrameworkBundle]];
+    self.librariesViewController = [sb instantiateControllerWithIdentifier:@"ORGLibrariesViewController"];
+    self.classesViewController = [sb instantiateControllerWithIdentifier:@"ORGClassesViewController"];
+    self.uiTreeViewController = (ORGUITreeViewController*)self.contentViewController;
+}
+
+#pragma mark - Toobar Actions
+
+- (IBAction)uiTreeSelection:(id)sender {
+    self.contentViewController = self.uiTreeViewController;
+}
+
+- (IBAction)librariesSelection:(id)sender {
+    self.contentViewController = self.librariesViewController;
+}
+
+- (IBAction)classesSelection:(id)sender {
+    self.contentViewController = self.classesViewController;
 }
 
 #pragma mark - NSWindowDelegate
 
 - (void)windowWillClose:(NSNotification *)notification {
-    self.tree = nil;
-}
-
-#pragma mark - NSOutlineView
-
-- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
-    if (item == nil) {
-        return self.tree.windows.count;
-    } else if ([item isKindOfClass:[ORGUITreeNode class]]) {
-        ORGUITreeNode *node = item;
-        return node.children.count;
-    } else {
-        return 0;
-    }
-}
-
-- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item {
-    if (item == nil) {
-        return (self.tree.windows)[index];
-    } else if ([item isKindOfClass:[ORGUITreeNode class]]) {
-        ORGUITreeNode *node = item;
-        return node.children[index];
-    } else {
-        return nil;
-    }
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item {
-    if ([item isKindOfClass:[ORGUITreeNode class]]) {
-        ORGUITreeNode *node = item;
-        return node.children.count;
-        //return [node.view isKindOfClass:[NSWindow class]];
-    }
-    return NO;
-}
-
-- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item {
-    return item;
-}
-
-- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item {
-    return NO;
-}
-
-- (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item {
-    ORGTableCellView *view;
-    
-    if ([item isKindOfClass:[ORGUITreeNode class]]) {
-        ORGUITreeNode *node = item;
-        //if ([node.uiElement isKindOfClass:[NSWindow class]]) {
-        //    view = [outlineView makeViewWithIdentifier:@"WindowCell" owner:self];
-        //} else {
-            view = [outlineView makeViewWithIdentifier:@"MainCell" owner:self];
-        //}
-        view.treeNode = item;
-    }
-    return view;
-}
-
-- (void)outlineViewSelectionDidChange:(NSNotification*)notification {
-    
-    NSOutlineView *table = notification.object;
-        
-    self.selectedNode = [table itemAtRow:[table selectedRow]];
-//    if (self.selectedNode.isHidden) {
-//        self.selectedNode = nil;
-//    }
-    [self.propertiesView showElement:self.selectedNode];
-    [self.classView showElement:self.selectedNode];
 }
 
 

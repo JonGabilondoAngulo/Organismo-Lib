@@ -13,7 +13,7 @@
 #import "ORGTableCellView.h"
 #import "ORGElementPropertiesView.h"
 #import "ORGElementClassView.h"
-#import <Quartz/Quartz.h>
+@import Quartz;
 
 @interface ORGUITreeViewController ()
 
@@ -49,8 +49,6 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(highlightItem:) name:@"HIGHLIGHT-ELEMENT" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeHighlight:) name:@"REMOVE-HIGHLIGHT" object:nil];
-
-    //self.classHierarchy = @"NSObject";
 }
 
 - (void)removeHighlight:(NSNotification*)notitication {

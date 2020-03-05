@@ -6,7 +6,7 @@
 //  Copyright © 2019 organismo-mobile. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -9,6 +9,7 @@
 #import "NSApplication+ORG.h"
 #import "ORGNSViewHierarchy.h"
 #import "ORGInspectorWindowController.h"
+#import "NSBundle+ORG.h"
 
 static NSMutableArray *windowControllers;
 
@@ -66,6 +67,7 @@ static NSMutableArray *windowControllers;
     NSLog(@"%s", __PRETTY_FUNCTION__);
     
     [NSApplication ORG_createOrganismoMenu];
+    [self newWindowWithControllerClass:[ORGInspectorWindowController class]];
 }
 
 + (void)ORG_applicationDidBecomeActive:(id)sender
@@ -124,7 +126,7 @@ static NSMutableArray *windowControllers;
     }
 }
 
-- (void)ORG_submenuAction:(NSMenuItem*)menuItem {
++ (void)ORG_submenuAction:(NSMenuItem*)menuItem {
     
     if ([menuItem.identifier isEqualToString:@"about"]) {
         NSAttributedString *credits = [[NSAttributedString alloc] initWithString:@""];
@@ -138,10 +140,11 @@ static NSMutableArray *windowControllers;
     }
 }
 
-- (void)newWindowWithControllerClass:(Class)c {
++ (void)newWindowWithControllerClass:(Class)c {
     
     @try {
-        NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Organismo-mac" bundle:[NSBundle bundleForClass:NSClassFromString(@"ORGInspectorWindowController")]];
+        NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
+        NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Organismo-mac" bundle:orgFramework];
         NSWindowController *windowController = [sb instantiateInitialController];
         
         if (windowControllers == nil) {

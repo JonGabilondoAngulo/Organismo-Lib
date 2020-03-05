@@ -6,9 +6,9 @@
  A basic subclass of NSTableCellView that adds some properties strictly for allowing access to the items in code.
  */
 
-#import "ORGTableCellView.h"
+#import "ORGBaseTableCellView.h"
 
-@interface ORGTableCellView ()
+@interface ORGBaseTableCellView ()
 
 @property (assign) BOOL isSmallSize;
 @property (nonatomic) BOOL mouseInside;
@@ -18,7 +18,7 @@
 
 #pragma mark -
 
-@implementation ORGTableCellView
+@implementation ORGBaseTableCellView
 
 - (void)ensureTrackingArea {
     if (_trackingArea == nil) {

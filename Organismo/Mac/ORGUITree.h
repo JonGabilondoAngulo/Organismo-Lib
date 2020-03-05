@@ -6,7 +6,7 @@
 //  Copyright © 2019 organismo-mobile. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 #import "ORGUITreeNode.h"
 

@@ -6,11 +6,11 @@
 //  Copyright © 2020 organismo-mobile. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ORGLibrariesViewController : NSViewController
+@interface ORGLibrariesViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
 
 @end
 
