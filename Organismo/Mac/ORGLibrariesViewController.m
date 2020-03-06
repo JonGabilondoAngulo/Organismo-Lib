@@ -15,8 +15,10 @@
 @property (strong) IBOutlet NSArrayController *librariesArrayController;
 @property (strong) IBOutlet NSArrayController *classesArrayController;
 @property (weak) IBOutlet NSTableView *librariesTableView;
-
 @end
+
+static NSImage *thumbnailDylib;
+static NSImage *thumbnailFramework;
 
 @implementation ORGLibrariesViewController
 
@@ -76,6 +78,7 @@
     }
     return imageName.lastPathComponent;
 }
+
 - (IBAction)librarySelection:(id)sender {
     NSTableView *table = sender;
     NSDictionary<NSString*, NSString*> *selected = [[self.librariesArrayController arrangedObjects] objectAtIndex:[table selectedRow]];
@@ -97,9 +100,15 @@
     NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
 
     if ([self isDylib:libraryName]) {
-        image = [orgFramework imageForResource:@"dylib_16x16_Normal"];
+        if (!thumbnailDylib) {
+            thumbnailDylib = [orgFramework imageForResource:@"dylib_16x16_Normal"];
+        }
+        image = thumbnailDylib;
     } else  {
-        image = [orgFramework imageForResource:@"framework_16x16_Normal"];
+        if (!thumbnailFramework) {
+            thumbnailFramework = [orgFramework imageForResource:@"framework_16x16_Normal"];
+        }
+        image = thumbnailFramework;
     }
     return image;
 }
