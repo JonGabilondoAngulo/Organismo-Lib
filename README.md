@@ -1,5 +1,5 @@
 # Organismo for Mac
-Organismo framework for Mac be injected into Mac Apps to explore them at runtime. For a good technical background you could read https://medium.com/@jon.gabilondo.angulo_7635/how-to-inject-code-into-mach-o-apps-part-i-17ed375f736e
+Organismo framework for Mac to be injected into Mac Apps to explore them at runtime. For a good technical background you could read https://medium.com/@jon.gabilondo.angulo_7635/how-to-inject-code-into-mach-o-apps-part-i-17ed375f736e
 
 To inject it into a Mac App:
 
