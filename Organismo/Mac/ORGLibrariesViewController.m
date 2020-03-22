@@ -7,14 +7,16 @@
 //
 
 #import "ORGLibrariesViewController.h"
+#import "ORGClassesViewController.h"
 #import "NSBundle+ORG.h"
 #import <objc/runtime.h>
 
 @interface ORGLibrariesViewController ()
-//@property (nonatomic) NSArray<NSString *> *imageNames;
+@property (weak) IBOutlet NSView *rightSideView;
 @property (strong) IBOutlet NSArrayController *librariesArrayController;
 @property (strong) IBOutlet NSArrayController *classesArrayController;
 @property (weak) IBOutlet NSTableView *librariesTableView;
+@property (nonatomic) ORGClassesViewController *classesViewController;
 @end
 
 static NSImage *thumbnailDylib;
@@ -25,11 +27,17 @@ static NSImage *thumbnailFramework;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadImageNames];
-    [self.librariesTableView reloadData];
+    
+    // Install Classes view
+    self.classesViewController = [[ORGClassesViewController alloc] initWithNibName:@"ORGClassesViewController" bundle:[NSBundle ORGFrameworkBundle]];
+    NSView *classesView = self.classesViewController.view;
+    [self.rightSideView addSubview:self.classesViewController.view];
+    [self addChildViewController:self.classesViewController];
+    [classesView setFrameOrigin:NSZeroPoint];
+    [classesView setFrameSize:self.rightSideView.frame.size];
 }
 
-- (void)loadImageNames
-{
+- (void)loadImageNames {
     // Based on FLEX https://github.com/Flipboard/FLEX
 
     unsigned int imageNamesCount = 0;
@@ -70,8 +78,7 @@ static NSImage *thumbnailFramework;
     }
 }
 
-- (NSString *)shortNameForImageName:(NSString *)imageName
-{
+- (NSString *)shortNameForImageName:(NSString *)imageName {
     NSArray<NSString *> *components = [imageName componentsSeparatedByString:@"/"];
     if (components.count >= 2) {
         return [NSString stringWithFormat:@"%@/%@", components[components.count - 2], components[components.count - 1]];
@@ -83,8 +90,8 @@ static NSImage *thumbnailFramework;
     NSTableView *table = sender;
     NSDictionary<NSString*, NSString*> *selected = [[self.librariesArrayController arrangedObjects] objectAtIndex:[table selectedRow]];
     NSString *name = selected[@"name"];
-    [self.classesArrayController removeObjects:self.classesArrayController.arrangedObjects];
-    [self loadClassesForImage:[name UTF8String]];
+    
+    [self.classesViewController loadImageClassNames:name];
 }
 
 - (BOOL)isDylib:(NSString*)libraryName {

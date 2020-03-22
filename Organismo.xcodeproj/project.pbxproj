@@ -44,6 +44,7 @@
 		032CF287240D8A8E00461E2B /* NSBundle+ORG.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CF285240D8A8E00461E2B /* NSBundle+ORG.m */; };
 		032CF29F2411542C00461E2B /* ORGClassesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 032CF29D2411542C00461E2B /* ORGClassesViewController.h */; };
 		032CF2A02411542C00461E2B /* ORGClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CF29E2411542C00461E2B /* ORGClassesViewController.m */; };
+		032CF2A22412FE0000461E2B /* ORGClassesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032CF2A12412FE0000461E2B /* ORGClassesViewController.xib */; };
 		033677E11D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 033677DF1D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.h */; };
 		033677E21D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.m in Sources */ = {isa = PBXBuildFile; fileRef = 033677E01D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.m */; };
 		033677F11D3E67F1009B86A4 /* UINibDecoderORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 033677EF1D3E67F1009B86A4 /* UINibDecoderORG.h */; };
@@ -244,6 +245,7 @@
 		032CF285240D8A8E00461E2B /* NSBundle+ORG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+ORG.m"; path = "Organismo/Mac/NSBundle+ORG.m"; sourceTree = "<group>"; };
 		032CF29D2411542C00461E2B /* ORGClassesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORGClassesViewController.h; path = Organismo/Mac/ORGClassesViewController.h; sourceTree = "<group>"; };
 		032CF29E2411542C00461E2B /* ORGClassesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ORGClassesViewController.m; path = Organismo/Mac/ORGClassesViewController.m; sourceTree = "<group>"; };
+		032CF2A12412FE0000461E2B /* ORGClassesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ORGClassesViewController.xib; path = Organismo/Mac/ORGClassesViewController.xib; sourceTree = "<group>"; };
 		033677DF1D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboardSegue+ORG.h"; sourceTree = "<group>"; };
 		033677E01D3D3CF7009B86A4 /* UIStoryboardSegue+ORG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboardSegue+ORG.m"; sourceTree = "<group>"; };
 		033677EF1D3E67F1009B86A4 /* UINibDecoderORG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINibDecoderORG.h; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 			children = (
 				033DCFAC22D5F97000295555 /* Media.xcassets */,
 				031586B02337C66C0080F0EB /* Organismo-mac.storyboard */,
+				032CF2A12412FE0000461E2B /* ORGClassesViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1056,6 +1059,7 @@
 			files = (
 				033DCFAD22D5F97000295555 /* Media.xcassets in Resources */,
 				031586B12337C66C0080F0EB /* Organismo-mac.storyboard in Resources */,
+				032CF2A22412FE0000461E2B /* ORGClassesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

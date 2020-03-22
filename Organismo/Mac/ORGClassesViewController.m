@@ -12,6 +12,7 @@
 
 @interface ORGClassesViewController ()
 @property (strong) IBOutlet NSTreeController *classesTreeController;
+@property (weak) IBOutlet NSOutlineView *outlineView;
 @end
 
 static NSImage *thumbnailClass;
@@ -22,37 +23,19 @@ static NSImage *thumbnailProperty;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadClassNames];
-}
-
-- (NSImage*)thumbnailImageForClass {
-    if (!thumbnailClass) {
-        NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
-        thumbnailClass = [orgFramework imageForResource:@"class_16x16_Normal"];
+    if (self.loadMainBundleClassNamesWhenReady) {
+        [self loadMainBundleClassNames];
+        self.loadMainBundleClassNamesWhenReady = NO;
     }
-    return thumbnailClass;
 }
 
-- (NSImage*)thumbnailImageForMethod {
-    if (!thumbnailMethod) {
-        NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
-        thumbnailMethod = [orgFramework imageForResource:@"method_16x16_Normal"];
-    }
-    return thumbnailMethod;
-}
+- (void)loadImageClassNames:(NSString*)imageName {
+    
+    self.classesTreeController.content = [NSMutableArray array]; // Reseting. Not a better way ?
 
-- (NSImage*)thumbnailImageForProperty {
-    if (!thumbnailProperty) {
-        NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
-        return [orgFramework imageForResource:@"property_16x16_Normal"];
-    }
-    return thumbnailProperty;
-}
-
-- (void)loadClassNames {
     // Based on FLEX https://github.com/Flipboard/FLEX
     unsigned int classNamesCount = 0;
-    const char **classNames = objc_copyClassNamesForImage([[NSBundle mainBundle].executablePath UTF8String], &classNamesCount);
+    const char **classNames = objc_copyClassNamesForImage(imageName.UTF8String, &classNamesCount);
     if (classNames) {
         for (unsigned int i = 0; i < classNamesCount; i++) {
             const char *className = classNames[i];
@@ -66,6 +49,10 @@ static NSImage *thumbnailProperty;
         }
         free(classNames);
     }
+}
+
+- (void)loadMainBundleClassNames {
+    [self loadImageClassNames:[NSBundle mainBundle].executablePath];
 }
 
 - (NSArray<NSDictionary *> *)propertiesForClass:class {
@@ -100,5 +87,27 @@ static NSImage *thumbnailProperty;
     return methods;
 }
 
+- (NSImage*)thumbnailImageForClass {
+    if (!thumbnailClass) {
+        NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
+        thumbnailClass = [orgFramework imageForResource:@"class_16x16_Normal"];
+    }
+    return thumbnailClass;
+}
 
+- (NSImage*)thumbnailImageForMethod {
+    if (!thumbnailMethod) {
+        NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
+        thumbnailMethod = [orgFramework imageForResource:@"method_16x16_Normal"];
+    }
+    return thumbnailMethod;
+}
+
+- (NSImage*)thumbnailImageForProperty {
+    if (!thumbnailProperty) {
+        NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
+        return [orgFramework imageForResource:@"property_16x16_Normal"];
+    }
+    return thumbnailProperty;
+}
 @end

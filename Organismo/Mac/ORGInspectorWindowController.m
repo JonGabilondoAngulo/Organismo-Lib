@@ -34,9 +34,6 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Organismo-mac" bundle:[NSBundle ORGFrameworkBundle]];
-    self.librariesViewController = [sb instantiateControllerWithIdentifier:@"ORGLibrariesViewController"];
-    self.classesViewController = [sb instantiateControllerWithIdentifier:@"ORGClassesViewController"];
     self.uiTreeViewController = (ORGUITreeViewController*)self.contentViewController;
 }
 
@@ -47,10 +44,18 @@
 }
 
 - (IBAction)librariesSelection:(id)sender {
+    if (!self.librariesViewController) {
+        NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Organismo-mac" bundle:[NSBundle ORGFrameworkBundle]];
+        self.librariesViewController = [sb instantiateControllerWithIdentifier:@"ORGLibrariesViewController"];
+    }
     self.contentViewController = self.librariesViewController;
 }
 
 - (IBAction)classesSelection:(id)sender {
+    if (!self.classesViewController) {
+        self.classesViewController = [[ORGClassesViewController alloc] initWithNibName:@"ORGClassesViewController" bundle:[NSBundle ORGFrameworkBundle]];
+        self.classesViewController.loadMainBundleClassNamesWhenReady = YES;
+    }
     self.contentViewController = self.classesViewController;
 }
 
