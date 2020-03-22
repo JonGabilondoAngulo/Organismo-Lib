@@ -493,8 +493,6 @@
 		032CF2772409ADCB00461E2B /* UI Tree Inspector */ = {
 			isa = PBXGroup;
 			children = (
-				032CF27224081FDD00461E2B /* ORGUITreeViewController.h */,
-				032CF27324081FDD00461E2B /* ORGUITreeViewController.m */,
 				03007BAF232A1C3700DAF421 /* ORGElementPropertiesView.h */,
 				03007BB0232A1C3700DAF421 /* ORGElementPropertiesView.m */,
 				03AF319B232ABE2E00437482 /* ORGElementClassView.h */,
@@ -516,6 +514,8 @@
 				032CF26F24081AF200461E2B /* ORGLibrariesViewController.m */,
 				032CF29D2411542C00461E2B /* ORGClassesViewController.h */,
 				032CF29E2411542C00461E2B /* ORGClassesViewController.m */,
+				032CF27224081FDD00461E2B /* ORGUITreeViewController.h */,
+				032CF27324081FDD00461E2B /* ORGUITreeViewController.m */,
 			);
 			name = "Libraries Inspector";
 			sourceTree = "<group>";

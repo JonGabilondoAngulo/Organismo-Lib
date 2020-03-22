@@ -11,8 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class ORGUITreeNode;
+@class ORGClassesViewController;
 
 @interface ORGElementClassView : NSView
+
+@property (nonatomic) ORGClassesViewController *classesViewController;
 
 - (void)showElement:(ORGUITreeNode*)node;
 

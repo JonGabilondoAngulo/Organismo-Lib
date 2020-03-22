@@ -8,12 +8,11 @@
 
 #import "ORGElementClassView.h"
 #import "ORGUITreeNode.h"
-#import <objc/runtime.h>
+#import "ORGClassesViewController.h"
 
 @interface ORGElementClassView()
 
 @property (weak) IBOutlet NSTableView *methodsTableView;
-@property (strong) IBOutlet NSArrayController *methodsArrayController;
 @property (strong) IBOutlet NSArrayController *classHierarchyArrayController;
 @property (nonatomic) ORGUITreeNode *node;
 
@@ -47,16 +46,7 @@
 }
 
 - (void)showClassMethods:(Class)class {
-    [self.methodsArrayController removeObjects:[self.methodsArrayController arrangedObjects]];
-    unsigned int classCount;
-    Method *methodsList = class_copyMethodList(class, &classCount);
-    for (unsigned int i = 0; i < classCount; i++) {
-        SEL selector = method_getName(methodsList[i]);
-        [self.methodsArrayController addObject:NSStringFromSelector(selector)];
-    }
-    free(methodsList);
-        
-    [self.methodsTableView reloadData];
-}
+    [self.classesViewController showClass:class];
+ }
 
 @end

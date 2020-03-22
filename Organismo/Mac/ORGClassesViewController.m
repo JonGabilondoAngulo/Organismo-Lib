@@ -55,7 +55,21 @@ static NSImage *thumbnailProperty;
     [self loadImageClassNames:[NSBundle mainBundle].executablePath];
 }
 
-- (NSArray<NSDictionary *> *)propertiesForClass:class {
+- (void)showClass:(Class)aClass {
+    self.classesTreeController.content = [NSMutableArray array]; // Reseting. Not a better way ?
+
+    NSString *classNameString = NSStringFromClass(aClass);
+    NSArray<NSDictionary *> *properties = [self propertiesForClass:aClass];
+    NSArray<NSDictionary *> *methods = [self methodsForClass:aClass];
+    NSMutableArray<NSDictionary *> *children = [NSMutableArray arrayWithArray:properties];
+    [children addObjectsFromArray:methods];
+    [self.classesTreeController addObject:@{@"name":classNameString, @"image":[self thumbnailImageForClass], @"children":children}];
+    
+    [self.outlineView expandItem:[self.outlineView itemAtRow:0]];
+
+}
+
+- (NSArray<NSDictionary *> *)propertiesForClass:(Class)class {
     // Based on FLEX https://github.com/Flipboard/FLEX
     NSMutableArray<NSDictionary *> *properties = [NSMutableArray array];
     unsigned int propertyCount = 0;
@@ -71,7 +85,7 @@ static NSImage *thumbnailProperty;
     return properties;
 }
 
-- (NSArray<NSDictionary *> *)methodsForClass:class {
+- (NSArray<NSDictionary *> *)methodsForClass:(Class)class {
     // Based on FLEX https://github.com/Flipboard/FLEX
     NSMutableArray<NSDictionary *> *methods = [NSMutableArray array];
     unsigned int methodCount = 0;

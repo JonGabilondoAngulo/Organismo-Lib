@@ -13,6 +13,8 @@
 #import "ORGTableCellView.h"
 #import "ORGElementPropertiesView.h"
 #import "ORGElementClassView.h"
+#import "ORGClassesViewController.h"
+#import "NSBundle+ORG.h"
 @import Quartz;
 
 @interface ORGUITreeViewController ()
@@ -21,8 +23,10 @@
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet ORGElementPropertiesView *propertiesView;
 @property (weak) IBOutlet ORGElementClassView *classView;
+@property (weak) IBOutlet NSView *classViewContainer;
 @property (nonatomic) ORGUITree *tree;
 @property (nonatomic) CAShapeLayer *highlightLayer;
+@property (nonatomic) ORGClassesViewController *classesViewController;
 
 - (void)removeHighlight:(NSNotification*)notitication;
 - (void)highlightItem:(NSNotification*)notitication;
@@ -49,6 +53,16 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(highlightItem:) name:@"HIGHLIGHT-ELEMENT" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeHighlight:) name:@"REMOVE-HIGHLIGHT" object:nil];
+    
+    // Install Methods view
+    self.classesViewController = [[ORGClassesViewController alloc] initWithNibName:@"ORGClassesViewController" bundle:[NSBundle ORGFrameworkBundle]];
+    NSView *classesView = self.classesViewController.view;
+    [self.classViewContainer addSubview:self.classesViewController.view];
+    [self addChildViewController:self.classesViewController];
+    [classesView setFrameOrigin:NSZeroPoint];
+    [classesView setFrameSize:self.classViewContainer.frame.size];
+    
+    self.classView.classesViewController = self.classesViewController;
 }
 
 - (void)removeHighlight:(NSNotification*)notitication {

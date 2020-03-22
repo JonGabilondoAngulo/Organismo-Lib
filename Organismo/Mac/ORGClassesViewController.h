@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL loadMainBundleClassNamesWhenReady;
 
 - (void)loadImageClassNames:(NSString*)imageName;
+- (void)showClass:(Class)aClass;
 
 @end
 
