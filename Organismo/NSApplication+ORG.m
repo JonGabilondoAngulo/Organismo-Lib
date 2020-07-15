@@ -13,7 +13,7 @@
 
 static NSMutableArray *windowControllers;
 
-@implementation NSApplication (ORG)
+@implementation NSApplication (ORG) 
 
 + (void)load
 {
@@ -66,8 +66,8 @@ static NSMutableArray *windowControllers;
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
     
-    [NSApplication ORG_createOrganismoMenu];
-    [self newWindowWithControllerClass:[ORGInspectorWindowController class]];
+    [NSApp ORG_createOrganismoMenu];
+    [NSApp newWindowWithControllerClass:[ORGInspectorWindowController class]];
 }
 
 + (void)ORG_applicationDidBecomeActive:(id)sender
@@ -100,19 +100,25 @@ static NSMutableArray *windowControllers;
     //NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem;
+{
+    return YES;
+}
+
 #pragma mark -
 
-+ (void)ORG_createOrganismoMenu {
+- (void)ORG_createOrganismoMenu {
     NSMenu *mainMenu = [NSApp mainMenu];
     if (mainMenu) {
         NSMenuItem *organismoMenubarItem = [mainMenu addItemWithTitle:@"Organismo" action:@selector(ORG_submenuAction:) keyEquivalent:@""];
-        [organismoMenubarItem setHidden:NO];
-        [organismoMenubarItem setEnabled:YES];
+        organismoMenubarItem.hidden = NO;
+        organismoMenubarItem.enabled = YES;
         organismoMenubarItem.target = NSApp;
-        
+
         NSMenu *organismoMenu = [[NSMenu alloc] initWithTitle:@"Organismo"];
-        organismoMenu.autoenablesItems = NO;
+        organismoMenu.autoenablesItems = YES;
         [organismoMenubarItem setSubmenu:organismoMenu];
+        organismoMenu.delegate = NSApp;
 
         NSMenuItem *orgMenuItem = [organismoMenu addItemWithTitle:@"Inspector" action:@selector(ORG_submenuAction:) keyEquivalent:@""];
         orgMenuItem.identifier = @"inspector";
@@ -126,7 +132,7 @@ static NSMutableArray *windowControllers;
     }
 }
 
-+ (void)ORG_submenuAction:(NSMenuItem*)menuItem {
+- (void)ORG_submenuAction:(NSMenuItem*)menuItem {
     
     if ([menuItem.identifier isEqualToString:@"about"]) {
         NSAttributedString *credits = [[NSAttributedString alloc] initWithString:@""];
@@ -140,7 +146,7 @@ static NSMutableArray *windowControllers;
     }
 }
 
-+ (void)newWindowWithControllerClass:(Class)c {
+- (void)newWindowWithControllerClass:(Class)c {
     
     @try {
         NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
