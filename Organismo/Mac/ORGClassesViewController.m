@@ -59,6 +59,10 @@ static NSImage *thumbnailProperty;
     self.classesTreeController.content = [NSMutableArray array]; // Reseting. Not a better way ?
 
     NSString *classNameString = NSStringFromClass(aClass);
+    if (classNameString == nil) {
+        NSLog(@"Unknown class. %@", aClass);
+        return;
+    }
     NSArray<NSDictionary *> *properties = [self propertiesForClass:aClass];
     NSArray<NSDictionary *> *methods = [self methodsForClass:aClass];
     NSMutableArray<NSDictionary *> *children = [NSMutableArray arrayWithArray:properties];
