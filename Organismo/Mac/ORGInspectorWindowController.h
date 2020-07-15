@@ -14,9 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ORGInspectorWindowController : NSWindowController <NSWindowDelegate>
 
-@property (nonatomic) NSString *classHierarchy;
 @property (nonatomic, nullable) ORGUITreeNode *selectedNode;
-@property (strong) IBOutlet NSArrayController *methodsArrayController;
 
 
 @end

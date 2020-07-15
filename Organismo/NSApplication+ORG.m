@@ -9,10 +9,11 @@
 #import "NSApplication+ORG.h"
 #import "ORGNSViewHierarchy.h"
 #import "ORGInspectorWindowController.h"
+#import "NSBundle+ORG.h"
 
 static NSMutableArray *windowControllers;
 
-@implementation NSApplication (ORG)
+@implementation NSApplication (ORG) 
 
 + (void)load
 {
@@ -65,7 +66,8 @@ static NSMutableArray *windowControllers;
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
     
-    [NSApplication ORG_createOrganismoMenu];
+    [NSApp ORG_createOrganismoMenu];
+    [NSApp newWindowWithControllerClass:[ORGInspectorWindowController class]];
 }
 
 + (void)ORG_applicationDidBecomeActive:(id)sender
@@ -98,19 +100,25 @@ static NSMutableArray *windowControllers;
     //NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem;
+{
+    return YES;
+}
+
 #pragma mark -
 
-+ (void)ORG_createOrganismoMenu {
+- (void)ORG_createOrganismoMenu {
     NSMenu *mainMenu = [NSApp mainMenu];
     if (mainMenu) {
         NSMenuItem *organismoMenubarItem = [mainMenu addItemWithTitle:@"Organismo" action:@selector(ORG_submenuAction:) keyEquivalent:@""];
-        [organismoMenubarItem setHidden:NO];
-        [organismoMenubarItem setEnabled:YES];
+        organismoMenubarItem.hidden = NO;
+        organismoMenubarItem.enabled = YES;
         organismoMenubarItem.target = NSApp;
-        
+
         NSMenu *organismoMenu = [[NSMenu alloc] initWithTitle:@"Organismo"];
-        organismoMenu.autoenablesItems = NO;
+        organismoMenu.autoenablesItems = YES;
         [organismoMenubarItem setSubmenu:organismoMenu];
+        organismoMenu.delegate = NSApp;
 
         NSMenuItem *orgMenuItem = [organismoMenu addItemWithTitle:@"Inspector" action:@selector(ORG_submenuAction:) keyEquivalent:@""];
         orgMenuItem.identifier = @"inspector";
@@ -139,12 +147,20 @@ static NSMutableArray *windowControllers;
 }
 
 - (void)newWindowWithControllerClass:(Class)c {
-    NSWindowController *controller = [[c alloc] init];
-    if (windowControllers == nil) {
-        windowControllers = [NSMutableArray array];
+    
+    @try {
+        NSBundle *orgFramework = [NSBundle ORGFrameworkBundle];
+        NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Organismo-mac" bundle:orgFramework];
+        NSWindowController *windowController = [sb instantiateInitialController];
+        
+        if (windowControllers == nil) {
+            windowControllers = [NSMutableArray array];
+        }
+        [windowControllers addObject:windowController];
+        [windowController showWindow:self];
+    } @catch (NSException *exception) {
+        NSLog(@"ERROR. Exception: %@. At:%s", exception, __PRETTY_FUNCTION__);
     }
-    [windowControllers addObject:controller];
-    [controller showWindow:self];
 }
 
 

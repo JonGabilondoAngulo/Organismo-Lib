@@ -6,13 +6,16 @@
 //  Copyright © 2019 organismo-mobile. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class ORGUITreeNode;
+@class ORGClassesViewController;
 
 @interface ORGElementClassView : NSView
+
+@property (nonatomic) ORGClassesViewController *classesViewController;
 
 - (void)showElement:(ORGUITreeNode*)node;
 

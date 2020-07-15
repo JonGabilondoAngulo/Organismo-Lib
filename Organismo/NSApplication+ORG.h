@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSApplication (ORG)
+@interface NSApplication (ORG) <NSMenuDelegate, NSMenuItemValidation>
 
 @end
 
