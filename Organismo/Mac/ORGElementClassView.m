@@ -12,7 +12,7 @@
 
 @interface ORGElementClassView()
 
-@property (weak) IBOutlet NSTableView *methodsTableView;
+//@property (weak) IBOutlet NSTableView *methodsTableView;
 @property (strong) IBOutlet NSArrayController *classHierarchyArrayController;
 @property (nonatomic) ORGUITreeNode *node;
 
@@ -39,6 +39,9 @@
 }
 
 - (void)showClassHierarchy:(Class)class {
+    if (!self.classHierarchyArrayController.content) {
+        self.classHierarchyArrayController.content = [NSMutableArray array]; 
+    }
     [self.classHierarchyArrayController removeObjects:[self.classHierarchyArrayController arrangedObjects]];
     for ( Class currentClass = class; currentClass; currentClass = currentClass.superclass) {
         [self.classHierarchyArrayController addObject:NSStringFromClass(currentClass)];

@@ -8,11 +8,13 @@
 
 #import "ORGLibrariesViewController.h"
 #import "ORGClassesViewController.h"
+#import "ORGViewContainer.h"
 #import "NSBundle+ORG.h"
+#import "NSStoryboard+ORG.h"
 #import <objc/runtime.h>
 
 @interface ORGLibrariesViewController ()
-@property (weak) IBOutlet NSView *rightSideView;
+@property (weak) IBOutlet ORGViewContainer *rightSideView;
 @property (strong) IBOutlet NSArrayController *librariesArrayController;
 @property (strong) IBOutlet NSArrayController *classesArrayController;
 @property (weak) IBOutlet NSTableView *librariesTableView;
@@ -29,12 +31,10 @@ static NSImage *thumbnailFramework;
     [self loadImageNames];
     
     // Install Classes view
-    self.classesViewController = [[ORGClassesViewController alloc] initWithNibName:@"ORGClassesViewController" bundle:[NSBundle ORGFrameworkBundle]];
-    NSView *classesView = self.classesViewController.view;
-    [self.rightSideView addSubview:self.classesViewController.view];
+    self.classesViewController = [NSStoryboard ORG_instantiateControllerWithIdentifier:@"ORGClassesViewController"];
+
+    [self.rightSideView addSubviewOfController:self.classesViewController];
     [self addChildViewController:self.classesViewController];
-    [classesView setFrameOrigin:NSZeroPoint];
-    [classesView setFrameSize:self.rightSideView.frame.size];
 }
 
 - (void)loadImageNames {

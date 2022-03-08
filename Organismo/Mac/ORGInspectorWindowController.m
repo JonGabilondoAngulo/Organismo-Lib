@@ -16,7 +16,10 @@
 #import "ORGUITreeViewController.h"
 #import "ORGLibrariesViewController.h"
 #import "ORGClassesViewController.h"
+#import "ORGViewContainer.h"
 #import "NSBundle+ORG.h"
+#import "NSStoryboard+ORG.h"
+
 @import Quartz;
 
 @interface ORGInspectorWindowController ()
@@ -34,29 +37,34 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    self.uiTreeViewController = (ORGUITreeViewController*)self.contentViewController;
+    [self uiTreeSelection:nil];
 }
 
 #pragma mark - Toobar Actions
 
 - (IBAction)uiTreeSelection:(id)sender {
-    self.contentViewController = self.uiTreeViewController;
+    if (!self.uiTreeViewController) {
+        self.uiTreeViewController = (ORGUITreeViewController*)[NSStoryboard ORG_instantiateControllerWithIdentifier:@"ORGUITreeViewController"];
+    }
+    ORGViewContainer *container = (ORGViewContainer*)self.contentViewController.view;
+    [container addSubviewOfController:self.uiTreeViewController];
 }
 
 - (IBAction)librariesSelection:(id)sender {
     if (!self.librariesViewController) {
-        NSStoryboard *sb = [NSStoryboard storyboardWithName:@"Organismo-mac" bundle:[NSBundle ORGFrameworkBundle]];
-        self.librariesViewController = [sb instantiateControllerWithIdentifier:@"ORGLibrariesViewController"];
+        self.librariesViewController = (ORGLibrariesViewController*)[NSStoryboard ORG_instantiateControllerWithIdentifier:@"ORGLibrariesViewController"];
     }
-    self.contentViewController = self.librariesViewController;
+    ORGViewContainer *container = (ORGViewContainer*)self.contentViewController.view;
+    [container addSubviewOfController:self.librariesViewController];
 }
 
 - (IBAction)classesSelection:(id)sender {
     if (!self.classesViewController) {
-        self.classesViewController = [[ORGClassesViewController alloc] initWithNibName:@"ORGClassesViewController" bundle:[NSBundle ORGFrameworkBundle]];
-        self.classesViewController.loadMainBundleClassNamesWhenReady = YES;
+        self.classesViewController = (ORGClassesViewController*)[NSStoryboard ORG_instantiateControllerWithIdentifier:@"ORGClassesViewController"];
+        self.classesViewController.loadMainBundleClassNamesReady = YES;
     }
-    self.contentViewController = self.classesViewController;
+    ORGViewContainer *container = (ORGViewContainer*)self.contentViewController.view;
+    [container addSubviewOfController:self.classesViewController];
 }
 
 #pragma mark - NSWindowDelegate

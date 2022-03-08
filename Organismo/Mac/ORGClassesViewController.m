@@ -23,9 +23,9 @@ static NSImage *thumbnailProperty;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.loadMainBundleClassNamesWhenReady) {
+    if (self.loadMainBundleClassNamesReady) {
         [self loadMainBundleClassNames];
-        self.loadMainBundleClassNamesWhenReady = NO;
+        self.loadMainBundleClassNamesReady = NO;
     }
 }
 

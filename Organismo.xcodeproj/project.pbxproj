@@ -110,6 +110,10 @@
 		03C2CD0F1E93969800508AD9 /* ORGGestureLongPress.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C2CD0D1E93969800508AD9 /* ORGGestureLongPress.m */; };
 		03C2CD121E9396B200508AD9 /* ORGGestureSwipe.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C2CD101E9396B200508AD9 /* ORGGestureSwipe.h */; };
 		03C2CD131E9396B200508AD9 /* ORGGestureSwipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C2CD111E9396B200508AD9 /* ORGGestureSwipe.m */; };
+		03CAAB2E27D6BB9F0096C636 /* NSStoryboard+ORG.h in Headers */ = {isa = PBXBuildFile; fileRef = 03CAAB2C27D6BB9F0096C636 /* NSStoryboard+ORG.h */; };
+		03CAAB2F27D6BB9F0096C636 /* NSStoryboard+ORG.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CAAB2D27D6BB9F0096C636 /* NSStoryboard+ORG.m */; };
+		03CAAB3927D7EB390096C636 /* ORGViewContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 03CAAB3727D7EB390096C636 /* ORGViewContainer.h */; };
+		03CAAB3A27D7EB390096C636 /* ORGViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CAAB3827D7EB390096C636 /* ORGViewContainer.m */; };
 		03DA668B1CBCEE4700E26CAA /* Organismo.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DA668A1CBCEE4700E26CAA /* Organismo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03DA66921CBCEE4700E26CAA /* Organismo-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DA66871CBCEE4700E26CAA /* Organismo-iOS.framework */; };
 		03DA66971CBCEE4700E26CAA /* OrganismoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA66961CBCEE4700E26CAA /* OrganismoTests.m */; };
@@ -311,6 +315,10 @@
 		03C2CD0D1E93969800508AD9 /* ORGGestureLongPress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGGestureLongPress.m; sourceTree = "<group>"; };
 		03C2CD101E9396B200508AD9 /* ORGGestureSwipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORGGestureSwipe.h; sourceTree = "<group>"; };
 		03C2CD111E9396B200508AD9 /* ORGGestureSwipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORGGestureSwipe.m; sourceTree = "<group>"; };
+		03CAAB2C27D6BB9F0096C636 /* NSStoryboard+ORG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSStoryboard+ORG.h"; path = "Organismo/NSStoryboard+ORG.h"; sourceTree = "<group>"; };
+		03CAAB2D27D6BB9F0096C636 /* NSStoryboard+ORG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSStoryboard+ORG.m"; path = "Organismo/NSStoryboard+ORG.m"; sourceTree = "<group>"; };
+		03CAAB3727D7EB390096C636 /* ORGViewContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORGViewContainer.h; path = Organismo/Mac/ORGViewContainer.h; sourceTree = "<group>"; };
+		03CAAB3827D7EB390096C636 /* ORGViewContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ORGViewContainer.m; path = Organismo/Mac/ORGViewContainer.m; sourceTree = "<group>"; };
 		03DA66871CBCEE4700E26CAA /* Organismo-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Organismo-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DA668A1CBCEE4700E26CAA /* Organismo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Organismo.h; sourceTree = "<group>"; };
 		03DA668C1CBCEE4700E26CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -472,18 +480,12 @@
 		032C9FE222C8B09400B2DBEA /* Organismo-mac */ = {
 			isa = PBXGroup;
 			children = (
-				032C9FE322C8CA2700B2DBEA /* NSApplication+ORG.h */,
-				032C9FE422C8CA2700B2DBEA /* NSApplication+ORG.m */,
 				034B1B5E22CE4F9A00CFEDD0 /* ORGNSViewHierarchy.h */,
 				034B1B5F22CE4F9A00CFEDD0 /* ORGNSViewHierarchy.m */,
-				0394907722D335BE0029BB9B /* ORGInspectorWindowController.h */,
-				0394907822D335BE0029BB9B /* ORGInspectorWindowController.m */,
-				032CF27B240C229C00461E2B /* ORGBaseTableCellView.h */,
-				032CF27C240C229C00461E2B /* ORGBaseTableCellView.m */,
 				032CF283240D89FD00461E2B /* Categories */,
-				032CF278240AEF7C00461E2B /* Libraries Inspector */,
+				032CF278240AEF7C00461E2B /* Controllers */,
+				03CAAB3027D7EA170096C636 /* Views */,
 				032CF2772409ADCB00461E2B /* UI Tree Inspector */,
-				033DCF9C22D4D69A00295555 /* Categories */,
 				034B1B6222CE4FA000CFEDD0 /* Resources */,
 				0300F9DC22EECB40007DF323 /* Supporting Files */,
 			);
@@ -493,10 +495,6 @@
 		032CF2772409ADCB00461E2B /* UI Tree Inspector */ = {
 			isa = PBXGroup;
 			children = (
-				03007BAF232A1C3700DAF421 /* ORGElementPropertiesView.h */,
-				03007BB0232A1C3700DAF421 /* ORGElementPropertiesView.m */,
-				03AF319B232ABE2E00437482 /* ORGElementClassView.h */,
-				03AF319C232ABE2E00437482 /* ORGElementClassView.m */,
 				034B1B6322CFA7F300CFEDD0 /* ORGUITree.h */,
 				034B1B6422CFA7F300CFEDD0 /* ORGUITree.m */,
 				0300F9D822EECA73007DF323 /* ORGUITreeNode.h */,
@@ -507,37 +505,36 @@
 			name = "UI Tree Inspector";
 			sourceTree = "<group>";
 		};
-		032CF278240AEF7C00461E2B /* Libraries Inspector */ = {
+		032CF278240AEF7C00461E2B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				032CF26E24081AF200461E2B /* ORGLibrariesViewController.h */,
-				032CF26F24081AF200461E2B /* ORGLibrariesViewController.m */,
 				032CF29D2411542C00461E2B /* ORGClassesViewController.h */,
 				032CF29E2411542C00461E2B /* ORGClassesViewController.m */,
+				0394907722D335BE0029BB9B /* ORGInspectorWindowController.h */,
+				0394907822D335BE0029BB9B /* ORGInspectorWindowController.m */,
+				032CF26E24081AF200461E2B /* ORGLibrariesViewController.h */,
+				032CF26F24081AF200461E2B /* ORGLibrariesViewController.m */,
 				032CF27224081FDD00461E2B /* ORGUITreeViewController.h */,
 				032CF27324081FDD00461E2B /* ORGUITreeViewController.m */,
 			);
-			name = "Libraries Inspector";
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		032CF283240D89FD00461E2B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				032C9FE322C8CA2700B2DBEA /* NSApplication+ORG.h */,
+				032C9FE422C8CA2700B2DBEA /* NSApplication+ORG.m */,
 				032CF284240D8A8E00461E2B /* NSBundle+ORG.h */,
 				032CF285240D8A8E00461E2B /* NSBundle+ORG.m */,
-			);
-			name = Categories;
-			sourceTree = "<group>";
-		};
-		033DCF9C22D4D69A00295555 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				033DCF9D22D4D6C800295555 /* NSWindow+ORG.h */,
-				033DCF9E22D4D6C800295555 /* NSWindow+ORG.m */,
-				033DCFA122D4D6EA00295555 /* NSControl+ORG.h */,
-				033DCFA222D4D6EA00295555 /* NSControl+ORG.m */,
 				033DCFA522D4D70200295555 /* NSButton+ORG.h */,
 				033DCFA622D4D70200295555 /* NSButton+ORG.m */,
+				033DCFA122D4D6EA00295555 /* NSControl+ORG.h */,
+				033DCFA222D4D6EA00295555 /* NSControl+ORG.m */,
+				03CAAB2C27D6BB9F0096C636 /* NSStoryboard+ORG.h */,
+				03CAAB2D27D6BB9F0096C636 /* NSStoryboard+ORG.m */,
+				033DCF9D22D4D6C800295555 /* NSWindow+ORG.h */,
+				033DCF9E22D4D6C800295555 /* NSWindow+ORG.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -587,6 +584,21 @@
 			);
 			name = Gestures;
 			path = Organismo;
+			sourceTree = "<group>";
+		};
+		03CAAB3027D7EA170096C636 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				032CF27B240C229C00461E2B /* ORGBaseTableCellView.h */,
+				032CF27C240C229C00461E2B /* ORGBaseTableCellView.m */,
+				03AF319B232ABE2E00437482 /* ORGElementClassView.h */,
+				03AF319C232ABE2E00437482 /* ORGElementClassView.m */,
+				03007BAF232A1C3700DAF421 /* ORGElementPropertiesView.h */,
+				03007BB0232A1C3700DAF421 /* ORGElementPropertiesView.m */,
+				03CAAB3727D7EB390096C636 /* ORGViewContainer.h */,
+				03CAAB3827D7EB390096C636 /* ORGViewContainer.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		03DA667D1CBCEE4700E26CAA = {
@@ -849,6 +861,7 @@
 				033DCFA722D4D70200295555 /* NSButton+ORG.h in Headers */,
 				033DCFA322D4D6EA00295555 /* NSControl+ORG.h in Headers */,
 				032CF27424081FDD00461E2B /* ORGUITreeViewController.h in Headers */,
+				03CAAB2E27D6BB9F0096C636 /* NSStoryboard+ORG.h in Headers */,
 				032CF27024081AF200461E2B /* ORGLibrariesViewController.h in Headers */,
 				039C336222C7D63600E61DA8 /* NSObject+ORG.h in Headers */,
 				039C338C22C7D63600E61DA8 /* Organismo.h in Headers */,
@@ -863,6 +876,7 @@
 				034B1B6022CE4F9A00CFEDD0 /* ORGNSViewHierarchy.h in Headers */,
 				0394907A22D335BE0029BB9B /* ORGInspectorWindowController.h in Headers */,
 				03007BB1232A1C3700DAF421 /* ORGElementPropertiesView.h in Headers */,
+				03CAAB3927D7EB390096C636 /* ORGViewContainer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,7 +1033,7 @@
 				TargetAttributes = {
 					039C32F422C7D63600E61DA8 = {
 						DevelopmentTeam = NRRF7234ZC;
-						LastSwiftMigration = 1100;
+						LastSwiftMigration = 1300;
 						ProvisioningStyle = Automatic;
 					};
 					03DA66861CBCEE4700E26CAA = {
@@ -1178,6 +1192,8 @@
 				032CF287240D8A8E00461E2B /* NSBundle+ORG.m in Sources */,
 				034B1B6122CE4F9A00CFEDD0 /* ORGNSViewHierarchy.m in Sources */,
 				032CF27E240C229C00461E2B /* ORGBaseTableCellView.m in Sources */,
+				03CAAB3A27D7EB390096C636 /* ORGViewContainer.m in Sources */,
+				03CAAB2F27D6BB9F0096C636 /* NSStoryboard+ORG.m in Sources */,
 				033DCFA822D4D70200295555 /* NSButton+ORG.m in Sources */,
 				032CF2A02411542C00461E2B /* ORGClassesViewController.m in Sources */,
 				032C9FE622C8CA2700B2DBEA /* NSApplication+ORG.m in Sources */,
@@ -1321,7 +1337,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.organismo-mobile.Organismo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1369,7 +1384,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.organismo-mobile.Organismo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1419,7 +1433,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1462,7 +1476,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

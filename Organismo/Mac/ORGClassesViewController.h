@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ORGClassesViewController : NSViewController
 
-@property (nonatomic) BOOL loadMainBundleClassNamesWhenReady;
+@property (nonatomic) BOOL loadMainBundleClassNamesReady;
 
 - (void)loadImageClassNames:(NSString*)imageName;
 - (void)showClass:(Class)aClass;

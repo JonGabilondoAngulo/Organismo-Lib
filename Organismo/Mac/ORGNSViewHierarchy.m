@@ -19,7 +19,7 @@
     NSMutableArray * tree = [NSMutableArray array];
     for (NSWindow * window in [NSApplication sharedApplication].windows) {
         if ([self mustReportTreeOfWindow:window properties:properties]) {
-            NSDictionary * node = [self viewElementTree:window skipPrivateClasses:skipPrivate viewScreenshots:viewScreenshots];
+            NSDictionary * node = [self viewElementTree:window.contentView skipPrivateClasses:skipPrivate viewScreenshots:viewScreenshots];
             if (node) {
                 [tree addObject:node];
             }
@@ -31,7 +31,7 @@
 + (NSArray*)mainWindowElementTree:(NSDictionary*)properties skipPrivateClasses:(BOOL)skipPrivate viewScreenshots:(BOOL)viewScreenshots {
     
     NSWindow * mainWindow = [ORGNSViewHierarchy mainWindow:[NSApplication sharedApplication]];
-    NSDictionary * node = [self viewElementTree:mainWindow skipPrivateClasses:skipPrivate viewScreenshots:viewScreenshots];
+    NSDictionary * node = [self viewElementTree:mainWindow.contentView skipPrivateClasses:skipPrivate viewScreenshots:viewScreenshots];
     return @[node];
 }
 

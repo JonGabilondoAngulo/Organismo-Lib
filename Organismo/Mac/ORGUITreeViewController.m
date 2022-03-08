@@ -14,7 +14,9 @@
 #import "ORGElementPropertiesView.h"
 #import "ORGElementClassView.h"
 #import "ORGClassesViewController.h"
+#import "ORGViewContainer.h"
 #import "NSBundle+ORG.h"
+#import "NSStoryboard+ORG.h"
 @import Quartz;
 
 @interface ORGUITreeViewController ()
@@ -23,7 +25,7 @@
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet ORGElementPropertiesView *propertiesView;
 @property (weak) IBOutlet ORGElementClassView *classView;
-@property (weak) IBOutlet NSView *classViewContainer;
+@property (weak) IBOutlet ORGViewContainer *classViewContainer;
 @property (nonatomic) ORGUITree *tree;
 @property (nonatomic) CAShapeLayer *highlightLayer;
 @property (nonatomic) ORGClassesViewController *classesViewController;
@@ -55,13 +57,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeHighlight:) name:@"REMOVE-HIGHLIGHT" object:nil];
     
     // Install Methods view
-    self.classesViewController = [[ORGClassesViewController alloc] initWithNibName:@"ORGClassesViewController" bundle:[NSBundle ORGFrameworkBundle]];
-    NSView *classesView = self.classesViewController.view;
-    [self.classViewContainer addSubview:self.classesViewController.view];
+    self.classesViewController = (ORGClassesViewController*)[NSStoryboard ORG_instantiateControllerWithIdentifier:@"ORGClassesViewController"];
+
+    [self.classViewContainer addSubviewOfController:self.classesViewController];
     [self addChildViewController:self.classesViewController];
-    [classesView setFrameOrigin:NSZeroPoint];
-    [classesView setFrameSize:self.classViewContainer.frame.size];
-    
+
     self.classView.classesViewController = self.classesViewController;
 }
 
@@ -159,7 +159,7 @@
     ORGTableCellView *view;
     
     if ([item isKindOfClass:[ORGUITreeNode class]]) {
-        ORGUITreeNode *node = item;
+        //ORGUITreeNode *node = item;
         //if ([node.uiElement isKindOfClass:[NSWindow class]]) {
         //    view = [outlineView makeViewWithIdentifier:@"WindowCell" owner:self];
         //} else {

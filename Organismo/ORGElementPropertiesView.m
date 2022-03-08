@@ -15,6 +15,8 @@
 @property (weak) IBOutlet NSTextField *rectW;
 @property (weak) IBOutlet NSTextField *rectY;
 @property (weak) IBOutlet NSTextField *rectH;
+@property (weak) IBOutlet NSButton *hiddenButton;
+
 @property (nonatomic) ORGUITreeNode *node;
 
 - (void)updateFrame;
@@ -33,11 +35,13 @@
         self.rectY.integerValue = rect.origin.y;
         self.rectW.integerValue = rect.size.width;
         self.rectH.integerValue = rect.size.height;
+        self.hiddenButton.intValue = node.isHidden;
     } else {
         self.rectX.stringValue = @"";
         self.rectY.stringValue = @"";
         self.rectW.stringValue = @"";
         self.rectH.stringValue = @"";
+        self.hiddenButton.intValue = NO;
     }
 }
 
@@ -45,6 +49,13 @@
     [super drawRect:dirtyRect];
     
     // Drawing code here.
+}
+
+- (IBAction)hiddenSelected:(NSButton *)sender {
+    if ([self.node.uiElement isKindOfClass:NSView.class]) {
+        NSView *view = (NSView*)self.node.uiElement;
+        view.hidden = sender.intValue;
+    }
 }
 
 - (IBAction)rectXChanged:(NSStepper *)sender {

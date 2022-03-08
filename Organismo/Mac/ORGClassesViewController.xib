@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,12 +22,12 @@
                 <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLe-Oq-T2V">
                     <rect key="frame" x="0.0" y="0.0" width="489" height="704"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <clipView key="contentView" ambiguous="YES" id="Nt2-hL-2hk">
-                        <rect key="frame" x="1" y="0.0" width="487" height="688"/>
+                    <clipView key="contentView" id="Nt2-hL-2hk">
+                        <rect key="frame" x="1" y="1" width="487" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <outlineView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="1qR-wj-WgM" viewBased="YES" indentationPerLevel="16" outlineTableColumn="YnA-Dl-cXX" id="gon-HF-r6Y">
-                                <rect key="frame" x="0.0" y="0.0" width="489" height="663"/>
+                            <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="1qR-wj-WgM" viewBased="YES" indentationPerLevel="16" outlineTableColumn="YnA-Dl-cXX" id="gon-HF-r6Y">
+                                <rect key="frame" x="0.0" y="0.0" width="498" height="662"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -35,7 +35,6 @@
                                 <tableColumns>
                                     <tableColumn width="486" minWidth="40" maxWidth="1000" id="YnA-Dl-cXX">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Classes">
-                                            <font key="font" metaFont="label" size="11"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
@@ -47,7 +46,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="pRY-op-00P">
-                                                <rect key="frame" x="1" y="1" width="486" height="17"/>
+                                                <rect key="frame" x="1" y="1" width="495" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="brT-W6-fRs">
@@ -59,7 +58,7 @@
                                                         </connections>
                                                     </imageView>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOm-BN-hsh">
-                                                        <rect key="frame" x="25" y="0.0" width="461" height="17"/>
+                                                        <rect key="frame" x="25" y="0.0" width="470" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="thz-6g-v2y">
                                                             <font key="font" metaFont="label" size="11"/>
@@ -85,7 +84,7 @@
                             </outlineView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="jVa-QA-g89">
+                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="jVa-QA-g89">
                         <rect key="frame" x="1" y="688" width="487" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -93,8 +92,8 @@
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <tableHeaderView key="headerView" id="1qR-wj-WgM">
-                        <rect key="frame" x="0.0" y="0.0" width="489" height="25"/>
+                    <tableHeaderView key="headerView" wantsLayer="YES" id="1qR-wj-WgM">
+                        <rect key="frame" x="0.0" y="0.0" width="498" height="25"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
